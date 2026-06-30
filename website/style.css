@@ -1,0 +1,764 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0; 
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.upper-header {
+  background-color: #28246b;
+  color:white;
+  border-bottom: 1px solid #FFFFFF;
+}
+.upper-header-content {
+  margin: 0px 160px;
+  padding: 5px 30px;
+  display: flex;
+  gap: 500px;
+}
+.hd-icon {
+  fill: white;
+}
+.hd-icon-wrap {
+  fill: white;
+}
+
+header {
+  background-color: #28246b;
+  padding: 20px 160px;
+}
+
+.inside-header {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
+.logo img {
+  filter: invert(1); 
+  width: 150px;
+  height: auto;
+  padding-left: 30px;
+}
+
+
+.main-list ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+  display:inline-block;
+}
+
+.main-list li {
+  display:inline-block;
+  list-style: none;
+}
+
+.main-list li a {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.main-list li a:hover {
+ color:#d4af37
+}
+
+.appointmentwithme {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 2px solid #FFFFFF;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none !important ;
+  position: absolute;
+  background-color: #9c9ba1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* widoczne tylko przy najechaniu */
+}
+
+
+.home { 
+  padding: 20px 160px;
+  position: relative;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 65%;
+  width: 100%;
+  background-color: #e8f0f0; 
+  z-index: -1; 
+}
+
+
+
+.home-list-start {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 26px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: #3f3f4b;
+}
+
+.home-list-start p {
+  margin-top: 2cm; /* odstęp od góry */
+  margin-bottom: 1.5cm;
+}
+
+.home-list-color {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+
+
+.home-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+  justify-content: center;
+}
+
+.home-list-content {
+  background-color: #fff;
+  padding: 35px 25px;
+  color: #3f3f4b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d4af37; /* złota cienka ramka */
+  border-radius: 50%; /* okrągłe */
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.home-list-content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.home-list-icon svg {
+  width: 36px;
+  height: 36px;
+  fill: #d4af37; /* złote ikony */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.home-list-content:hover .home-list-icon svg {
+  transform: scale(1.15);
+}
+
+.home-list h3 {
+  font-family: 'Times New Roman', Times, serif
+}
+
+.home-list p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+.home-list-icon {
+  fill: white;
+}
+.testimonials {
+  padding: 60px 0;
+}
+.section-title {
+  padding: 20px 160px;
+}
+
+.section-title span {
+  font-size: 18px;
+  color: #777;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.testimonial__item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px; /* lekko zaokrąglone rogi, bardziej prostokątne niż okrągłe */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.testimonial__author__icon {
+  font-size: 30px;
+  color: #4da6ff; /* błękitny kolor postaci */
+  margin-right: 15px;
+}
+
+.testimonial__author__text h5 {
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif
+}
+
+.testimonial__author__text span {
+  font-size: 14px;
+  color: #777;
+}
+
+.rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.rating i {
+  color: #d4af37; /* złote gwiazdy jak w cenniku */
+  font-size: 18px;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 
+    68% 57%, 79% 91%, 50% 70%, 
+    21% 91%, 32% 57%, 2% 35%, 
+    39% 35%
+  ); /* kanciaste gwiazdy */
+}
+
+
+
+#aboutme {
+  padding-top: 3cm;
+  padding-bottom: 3cm;
+  display: flex;
+  justify-content: center;
+  background-color: #e8f0f0; ; /* delikatny, elegancki kolor tła */
+}
+
+.aboutme-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d4af37; /* złota cienka ramka */
+  border-radius: 3px;         /* minimalne zaokrąglenie, praktycznie prostokąt */
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+
+.aboutme-page img {
+  flex: 1 1 250px;      /* mniejsza szerokość podstawowa */
+  max-width: 300px;     /* ograniczenie maksymalne */
+  border-radius: 3px;   /* ostre rogi */
+  object-fit: cover;
+}
+
+.aboutme-content {
+  flex: 2 1 350px;       /* dopasowanie szerokości tekstu */
+  font-family: 'Oswald', sans-serif;
+  color: #3f3f4b;
+  font-size: 16px;       /* trochę mniejsza czcionka */
+  line-height: 1.5;
+}
+
+.aboutme-content h3.aboutme-start {
+  font-size: 20px;       /* mniejszy nagłówek */
+  margin-bottom: 12px;
+  color: #d4af37;        /* złoty akcent */
+}
+
+
+.aboutme-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+
+.certificates {
+  width: 100%;
+  overflow-x: auto;  /* Pasek przewijania */
+  white-space: nowrap;
+}
+.certificates-start span {
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  color:#777777
+}
+.certificates-start h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
+} 
+.certificates-start {
+  padding: 20px 160px;
+  padding-top: 2cm;
+}
+.gallery-container {
+  width: 100%;
+  overflow-x: auto;  /* Pasek przewijania */
+  white-space: nowrap;
+}
+.gallery {
+  display: flex;
+  gap: 20px; /* Odstęp między zdjęciami */
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 250px;  /* Dostosuj szerokość */
+  height: auto;
+  border-radius: 10px;
+}
+.gallery-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.gallery-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.gallery {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-item,
+.gallery-column {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.gallery-item {
+  width: 250px;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.gallery-item.small img {
+  width: 180px;
+}
+
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ddd;
+  border: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.scroll-btn:hover {
+  opacity: 1;
+}
+.scroll-btn.left {
+  left: 0;
+}
+.scroll-btn.right {
+  right: 0;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item,
+  .gallery-column {
+    width: 50%;
+  }
+
+  .scroll-btn {
+    display: none;
+  }
+  .gallery-container {
+  overflow-x: scroll; /* lub auto, jeśli chcesz pasek tylko przy konieczności */
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 3cm;
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+}
+.offer-content {
+  padding: 20px 160px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #e8f0f0; 
+}
+.therapy-content {
+  padding: 20px 160px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #e8f0f0; 
+  padding-top: 2cm;
+  padding-bottom: 2cm;
+
+}
+.therapy-content h2 {
+  font-family: 'Oswald';
+  font-size: 20px;
+}
+.contact-content {
+  padding: 20px 160px;
+  padding-top:2cm;
+  padding-bottom:2cm;
+  
+}
+.contact-start span {
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  color:#777777
+}
+.contact-start h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
+} 
+.contact-icon {
+  padding-top: 0.5cm;
+  padding-bottom: 0.5cm;
+}
+
+#contact .map-container {
+  margin: 20px auto 0;
+  border: 3px solid #d4af37; /* złota cienka ramka */
+  border-radius: 5px;         /* lekko zaokrąglone rogi */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#contact .map-container iframe {
+  display: block;
+  width: 100%;     /* dopasowane do ramki */
+  height: 300px;   /* wysokość mapy */
+}
+.pricelist-content {
+  padding: 20px 160px;
+  background-color: #e8f0f0;
+}
+.firstmeeting-content {
+  padding: 20px 160px;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 2cm; 
+  padding-bottom: 2cm;
+}
+.firstmeeting-content span {
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  color:#777777
+}
+.firstmeeting-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
+} 
+
+#certificates .gallery-container {
+    overflow: hidden;
+}
+
+#certificates .gallery .gallery-item,
+#certificates .gallery .gallery-column {
+    margin: 0 auto;
+}
+
+#certificates .gallery-item,
+#certificates .gallery-column {
+    width: auto !important; /* pozwala OwlCarousel samemu ustawić szerokość */
+}
+
+.offers-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* automatyczne dopasowanie */
+  gap: 20px; /* odstęp między ramkami */
+  margin-top: 30px;
+}
+
+/* Styl pojedynczej ramki */
+.offer-section {
+  background-color: #fff;              /* białe tło */
+  border: 2px solid #e0e0e0;          /* delikatna ramka */
+  border-radius: 12px;                /* zaokrąglone rogi */
+  padding: 20px;                      /* odstęp wewnętrzny */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* subtelny cień */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efekt hover dla lepszej interakcji */
+.offer-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Nagłówek w ramce */
+.offer-section .offer-sentence {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Opis w ramce */
+.offer-section .double-sentence {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+.meeting {
+  padding: 20px 160px;
+  padding-top: 2cm;
+  padding-bottom: 2cm;
+}
+.meeting span {
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  color:#777777
+}
+.meeting h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.faq-item {
+  border: 1px solid #d4af37; /* złota ramka */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Pytanie */
+.faq-question {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  color: #333;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+  color: #d4af37;
+  transition: transform 0.3s ease;
+}
+
+/* Odpowiedź */
+.faq-answer {
+  display: none;
+  padding: 15px 20px;
+  color: #555;
+  background-color: #fffaf0;
+  line-height: 1.6;
+  border-top: 1px solid #d4af37;
+}
+
+/* Aktywne pytanie */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question::after {
+  content: "-";
+  transform: rotate(180deg);
+}
+/* Sekcja cennika */
+#pricelist {
+  background-color: #e8f0f0;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Kontener */
+.pricelist-content {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Nagłówek sekcji */
+.pricelist-title {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Styl tabeli */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #d4af37; /* cienka złota ramka */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Nagłówki tabeli */
+.pricing-table th {
+  background-color: #fff8e1; /* subtelne złote tło */
+  color: #444;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #d4af37;
+  text-align: left;
+}
+
+/* Komórki tabeli */
+.pricing-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+  font-size: 16px;
+  vertical-align: top;
+}
+
+/* Ostatni wiersz bez dolnej linii */
+.pricing-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Efekt hover */
+.pricing-table tr:hover {
+  background-color: #fffdf6;
+  transition: background-color 0.3s ease;
+}
+
+/* RESPONSYWNOŚĆ – na telefonach tabela zmienia się w karty */
+@media (max-width: 768px) {
+  .pricing-table,
+  .pricing-table thead,
+  .pricing-table tbody,
+  .pricing-table th,
+  .pricing-table td,
+  .pricing-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Ukrywamy nagłówki tabeli */
+  .pricing-table thead {
+    display: none;
+  }
+
+  /* Karta cenowa */
+  .pricing-table tr {
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Pola w karcie */
+  .pricing-table td {
+    border: none;
+    padding: 8px 0;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Dodajemy etykiety pól */
+  .pricing-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #2c3e50;
+  }
+}
