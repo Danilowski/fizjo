@@ -1,0 +1,16 @@
+{
+  "name": "M.Therapy - Fizjoterapia Bydgoszcz",
+  "short_name": "M.Therapy",
+  "description": "Gabinet fizjoterapii ortopedycznej i stomatologicznej w Bydgoszczy",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#1f2a44",
+  "icons": [
+    {
+      "src": "images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

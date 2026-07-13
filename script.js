@@ -1,4 +1,6 @@
 
+
+// FAQ toggle
 document.addEventListener('DOMContentLoaded', () => {
 const questions = document.querySelectorAll('.faq-question');
 questions.forEach(q => {
@@ -7,7 +9,7 @@ q.parentElement.classList.toggle('active');
 });
 });
 
-
+// Smooth scroll z kompensacją sticky header
 document.querySelectorAll('a[href^="#"]').forEach(a => {
 a.addEventListener('click', e => {
 const id = a.getAttribute('href').slice(1);
@@ -19,101 +21,6 @@ window.scrollTo({ top: y, behavior: 'smooth' });
 }
 });
 });
-
-
-const certificateModal = document.getElementById('certificate-modal');
-const certificateModalImage = certificateModal?.querySelector('.certificate-modal__image');
-const certificateGallery = document.querySelector('#certificates .gallery');
-const certificatePrevButton = certificateModal?.querySelector('.certificate-modal__prev');
-const certificateNextButton = certificateModal?.querySelector('.certificate-modal__next');
-
-if (certificateModal && certificateModalImage && certificateGallery) {
-  const certificateImages = Array.from(certificateGallery.querySelectorAll('img'));
-  let activeIndex = 0;
-
-  const renderCertificate = (index) => {
-    const img = certificateImages[index];
-    if (!img) return;
-
-    certificateModalImage.classList.add('is-changing');
-    setTimeout(() => {
-      certificateModalImage.src = img.src;
-      certificateModalImage.alt = img.alt || 'Podgląd certyfikatu';
-      certificateModalImage.classList.remove('is-changing');
-    }, 80);
-
-    activeIndex = index;
-  };
-
-  const openCertificateModal = (img) => {
-    if (!img) return;
-    const index = certificateImages.indexOf(img);
-    if (index >= 0) {
-      activeIndex = index;
-    }
-
-    renderCertificate(activeIndex);
-    certificateModal.hidden = false;
-    certificateModal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-  };
-
-  const closeCertificateModal = () => {
-    certificateModal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-    certificateModal.hidden = true;
-  };
-
-  const showPreviousCertificate = () => {
-    const nextIndex = (activeIndex - 1 + certificateImages.length) % certificateImages.length;
-    renderCertificate(nextIndex);
-  };
-
-  const showNextCertificate = () => {
-    const nextIndex = (activeIndex + 1) % certificateImages.length;
-    renderCertificate(nextIndex);
-  };
-
-  certificateGallery.addEventListener('click', (event) => {
-    const galleryItem = event.target.closest('.gallery-item');
-    if (!galleryItem) return;
-
-    const img = galleryItem.querySelector('img');
-    if (img) openCertificateModal(img);
-  });
-
-  certificateGallery.addEventListener('keydown', (event) => {
-    const galleryItem = event.target.closest('.gallery-item');
-    if (!galleryItem) return;
-
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      const img = galleryItem.querySelector('img');
-      if (img) openCertificateModal(img);
-    }
-  });
-
-  certificateModal.addEventListener('click', (event) => {
-    if (event.target.hasAttribute('data-close')) {
-      closeCertificateModal();
-    }
-  });
-
-  certificatePrevButton?.addEventListener('click', showPreviousCertificate);
-  certificateNextButton?.addEventListener('click', showNextCertificate);
-
-  document.addEventListener('keydown', (event) => {
-    if (certificateModal.hidden) return;
-
-    if (event.key === 'Escape') {
-      closeCertificateModal();
-    } else if (event.key === 'ArrowLeft') {
-      showPreviousCertificate();
-    } else if (event.key === 'ArrowRight') {
-      showNextCertificate();
-    }
-  });
-}
 
 // Reveal on scroll
 const revealTargets = document.querySelectorAll('.offer-card, .booking-card, .booking-side, .contact-card, .map-card, .aboutme-page, .testimonial__item');
@@ -129,34 +36,83 @@ revealTargets.forEach(el => io.observe(el));
 });
 
 if (window.$ && window.$.fn && typeof window.$.fn.owlCarousel === 'function') {
-  
-  $(".testimonial__slider").owlCarousel({
-    loop: true,
-    margin: 24,
-    nav: false,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 4500,
-    autoplayHoverPause: true,
-    smartSpeed: 550,
-    responsive: { 0:{items:1}, 768:{items:2} }
-  });
-
-  
+  // Certyfikaty – manualne przewijanie przyciskami
   $("#certificates .gallery").owlCarousel({
     loop: true,
     margin: 18,
     nav: false,
     dots: false,
-    autoplay: true,
-    autoplayTimeout: 2600,
-    autoplayHoverPause: true,
+    autoplay: false,
     smartSpeed: 500,
     responsive: { 0:{items:2}, 600:{items:3}, 1000:{items:5} }
   });
 }
 
+const testimonialSlider = document.querySelector('.testimonial__slider');
+const testimonialItems = Array.from(document.querySelectorAll('.testimonial__item'));
 
+if (testimonialSlider && testimonialItems.length) {
+  let currentIndex = 0;
+
+  const goToItem = (index) => {
+    const safeIndex = Math.max(0, Math.min(index, testimonialItems.length - 1));
+    currentIndex = safeIndex;
+    const targetItem = testimonialItems[safeIndex];
+    targetItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  };
+
+  document.querySelectorAll('.testimonials .testimonial-nav-btn:not(.certificate-nav-btn)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const direction = btn.dataset.direction === 'next' ? 1 : -1;
+      goToItem(currentIndex + direction);
+    });
+  });
+}
+
+const certificateSlider = document.querySelector('#certificates .gallery');
+const certificateItems = Array.from(document.querySelectorAll('#certificates .gallery-item'));
+const certificateModal = document.getElementById('certificate-modal');
+const certificateModalImage = certificateModal?.querySelector('.certificate-modal__image');
+
+if (certificateSlider && certificateItems.length) {
+  let certificateIndex = 0;
+
+  const goToCertificateItem = (index) => {
+    const safeIndex = Math.max(0, Math.min(index, certificateItems.length - 1));
+    certificateIndex = safeIndex;
+    const targetItem = certificateItems[safeIndex];
+    targetItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  };
+
+  document.querySelectorAll('#certificates .certificate-nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const direction = btn.dataset.direction === 'next' ? 1 : -1;
+      goToCertificateItem(certificateIndex + direction);
+    });
+  });
+
+  certificateItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      if (!img || !certificateModal || !certificateModalImage) return;
+      certificateModalImage.src = img.src;
+      certificateModalImage.alt = img.alt || 'Podgląd certyfikatu';
+      certificateModal.hidden = false;
+      certificateModal.setAttribute('aria-hidden', 'false');
+      certificateIndex = index;
+    });
+  });
+
+  certificateModal?.querySelectorAll('[data-close="true"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!certificateModal) return;
+      certificateModal.hidden = true;
+      certificateModal.setAttribute('aria-hidden', 'true');
+    });
+  });
+}
+
+// Auto-scroll carousels (per-card smooth auto-advance, seamless loop)
 document.addEventListener('DOMContentLoaded', () => {
     function makeContinuousCarousel(selector, intervalMs){
         const container = document.querySelector(selector);
@@ -164,20 +120,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const originals = Array.from(container.children).filter(n => n.nodeType===1);
         if(originals.length <= 1) return;
 
-        
+        // Clone originals to allow seamless looping
         originals.forEach(node => {
             const clone = node.cloneNode(true);
             clone.setAttribute('aria-hidden','true');
             container.appendChild(clone);
         });
 
-        
+        // Recompute items and positions
         const items = Array.from(container.children).filter(n => n.nodeType===1);
         const positions = items.map(it => it.offsetLeft);
 
-        let index = 0; 
+        let index = 0; // index into items array
         let paused = false;
-        const smoothDuration = 500; 
+        const smoothDuration = 500; // ms (approx) for smooth scroll
 
         container.style.scrollBehavior = 'smooth';
 
@@ -186,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.addEventListener('focusin', () => { paused = true; });
         container.addEventListener('focusout', () => { paused = false; });
 
-        
+        // helper to scroll to item index with centering
         function scrollToItem(i){
             const item = items[i];
             if(!item) return;
@@ -194,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.scrollTo({ left: offset, behavior: 'smooth' });
         }
 
-        
+        // initial center
         setTimeout(() => scrollToItem(0), 50);
 
         const timer = setInterval(() => {
@@ -202,28 +158,26 @@ document.addEventListener('DOMContentLoaded', () => {
             index++;
             scrollToItem(index);
 
-            
+            // when we've scrolled into the cloned half, jump back to original index
             if(index >= originals.length){
-                
+                // after smooth animation completes, reset to original index without animation
                 setTimeout(() => {
                     container.style.scrollBehavior = 'auto';
-                    
+                    // compute equivalent original index and scroll to it
                     const resetIndex = index - originals.length;
                     const resetOffset = items[resetIndex].offsetLeft - Math.max(0, (container.clientWidth - items[resetIndex].clientWidth) / 2);
                     container.scrollLeft = resetOffset;
-                    
+                    // restore smooth behavior
                     setTimeout(() => { container.style.scrollBehavior = 'smooth'; }, 20);
                     index = resetIndex;
                 }, smoothDuration + 40);
             }
         }, intervalMs || 1000);
 
-        
+        // keep positions updated on resize
         window.addEventListener('resize', () => setTimeout(() => { items.forEach((it,i) => positions[i] = it.offsetLeft); scrollToItem(index); }, 120));
 
         return { stop: () => clearInterval(timer) };
     }
 
-    makeContinuousCarousel('.testimonial__slider', 1000);
-    makeContinuousCarousel('#certificates .gallery', 1000);
 });
