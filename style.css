@@ -45,6 +45,15 @@ a:hover{ opacity:.9; }
 .skip-link{ position:absolute; left:-9999px; top:auto; }
 .skip-link:focus{ left:16px; top:16px; z-index:1000; background:#fff; color:var(--navy-900); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow-s); }
 
+/* Breadcrumb Navigation */
+.breadcrumb{ padding:var(--sp-4) var(--sp-6); background:#f9f9f9; border-bottom:1px solid var(--silver-300); }
+.breadcrumb ol{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:var(--sp-2); font-size:var(--fs-small); color:var(--text-700); }
+.breadcrumb li{ display:inline; }
+.breadcrumb li::after{ content:" / "; margin:0 var(--sp-2); color:var(--silver-300); }
+.breadcrumb li:last-child::after{ content:""; margin:0; }
+.breadcrumb a{ color:var(--blue-400); font-weight:500; transition:color .2s var(--ease); }
+.breadcrumb a:hover{ color:var(--navy-900); }
+
 /* Topbar */
 .upper-header{ background:var(--navy-900); color:var(--white); border-bottom:1px solid rgba(255,255,255,0.15); }
 .upper-header-content{ margin:0 var(--sp-6); padding:6px var(--sp-4); display:flex; gap:var(--sp-7); align-items:center; justify-content:space-between; }
@@ -230,6 +239,14 @@ box-shadow:var(--shadow-s); transition:box-shadow .25s var(--ease), transform .2
 .faq-item.active .faq-answer{ display:block; }
 .faq-item.active .faq-question::after{ content:"-"; transform:rotate(180deg); }
 
+/* Service Areas */
+.service-areas{ padding:var(--sp-7) var(--sp-6); background:linear-gradient(180deg,#fffaf0 0%, #f9f6f0 100%); }
+.service-areas-content{ max-width:1000px; margin:0 auto; }
+.service-areas-content > p{ color:var(--text-700); font-size:var(--fs-body); line-height:1.7; margin:var(--sp-4) 0; }
+.areas-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:var(--sp-3); margin:var(--sp-5) 0; }
+.area-item{ background:var(--white); border:2px solid var(--gold-300); border-radius:var(--radius-m); padding:var(--sp-3) var(--sp-4); text-align:center; color:var(--navy-900); font-weight:600; box-shadow:var(--shadow-s); transition:transform .25s var(--ease), box-shadow .25s var(--ease); }
+.area-item:hover{ transform:translateY(-2px); box-shadow:var(--shadow-m); }
+
 /* Kontakt + mapa */
 .contact-wrap{ padding:var(--sp-7) var(--sp-6); background:linear-gradient(180deg,#ffffff 0%, #f3f6fa 100%); }
 .contact-grid{ display:grid; gap:var(--sp-5); grid-template-columns:1fr 1.2fr; align-items:stretch; width:100%; max-width:1100px; margin:0 auto; }
@@ -310,7 +327,7 @@ header{ padding:12px 12px; }
 .aboutme-page img{ max-height:220px; object-fit:cover; }
 .aboutme-content{ font-size:14px; line-height:1.55; }
 .aboutme-content h3.aboutme-start{ font-size:18px; margin-bottom:8px; }
-.home, .home-list-start, .offer-wrap, #pricelist, .booking-wrap, .meeting, .contact-wrap, .site-footer, .testimonials, .certificates-wrap, .techniques-wrap, .help-wrap{ padding-left:16px !important; padding-right:16px !important; }
+.home, .home-list-start, .offer-wrap, #pricelist, .booking-wrap, .meeting, .contact-wrap, .site-footer, .testimonials, .certificates-wrap, .techniques-wrap, .help-wrap, .service-areas{ padding-left:16px !important; padding-right:16px !important; }
 .section-title{ padding:0 16px; margin:var(--sp-5) 0 var(--sp-3); }
 .home{ padding-top:32px; padding-bottom:40px; }
 .hero{ grid-template-columns:1fr; gap:16px; }
@@ -369,6 +386,8 @@ header{ padding:12px 12px; }
 
 /* Cennik – układ kartowy mobilny */
 @media (max-width:768px){
+.breadcrumb ol{ gap:4px; }
+.breadcrumb li::after{ margin:0 4px; }
 .pricing-table{ display:table; table-layout:fixed; font-size:10px; }
 .pricing-table thead{ display:table-header-group; }
 .pricing-table tbody{ display:table-row-group; }
