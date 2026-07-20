@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /images/
 
 Sitemap: https://mtherapy.pl/sitemap.xml
+
+# Crawl-delay for polite crawling (in seconds)
+Crawl-delay: 1
