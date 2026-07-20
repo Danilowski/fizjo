@@ -19,9 +19,9 @@
 <link rel="alternate" hreflang="x-default" href="https://mtherapy.pl/">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="style.min.css" as="style">
+<link rel="preload" href="style.css" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.min.css">
+<link rel="stylesheet" href="style.css">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
@@ -57,26 +57,27 @@
 <a class="logo" href="#home" aria-label="M.Therapy">
 <img src="images/logo.svg" alt="M.Therapy – gabinet fizjoterapii w Bydgoszczy" decoding="async" width="160" height="60">
 </a>
-<nav class="main-list" aria-label="Główna nawigacja">
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+  <span class="menu-toggle__icon" aria-hidden="true">☰</span>
+  <span>Menu</span>
+</button>
+<nav class="main-list" id="primary-navigation" aria-label="Główna nawigacja">
 <ul>
 <li><a href="#aboutme">O Mnie</a></li>
 <li class="dropdown">
 <a href="#offer">Oferta</a>
 <div class="dropdown-content">
-<a href="#offer">Fizjoterapia Ortopedyczna</a>
-<a href="#offer">Fizjoterapia Stomatologiczna</a>
-<a href="#offer">Rehabilitacja Pourazowa</a>
-<a href="#offer">Rehabilitacja Przed I Pooperacyjna</a>
+<a href="fizjoterapia-ortopedyczna-bydgoszcz/">Fizjoterapia ortopedyczna</a>
+<a href="fizjoterapia-stomatologiczna-bydgoszcz/">Fizjoterapia stomatologiczna</a>
+<a href="terapia-bruksizmu-bydgoszcz/">Terapia bruksizmu</a>
+<a href="rehabilitacja-pooperacyjna-bydgoszcz/">Rehabilitacja pooperacyjna</a>
 <hr class="divider">
-<a href="#offer">Medyczny Trening Rehabilitacyjny</a>
-<a href="#offer">Terapia Blizn</a>
-<a href="#offer">Masaż</a>
-<a href="#offer">Terapia Bruksizmu</a>
+<a href="#offer">Pozostałe metody terapii</a>
 </div>
 
 </li>
 <li><a href="#pricelist">Cennik</a></li>
-<li><a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer">Rezerwacja</a></li>
+<li><a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=booking" target="_blank" rel="noopener noreferrer" data-track="booking">Rezerwacja</a></li>
 <li><a href="#contact" class="appointmentwithme">Kontakt</a></li>
 </ul>
 </nav>
@@ -91,14 +92,27 @@
 <img src="images/gabinet.jpg" alt="Gabinet M.Therapy – nowoczesne wnętrze fizjoterapii w Bydgoszczy" fetchpriority="high" width="1200" height="800">
 </div>
 <div class="hero-copy">
-<h1 id="home-title">Fizjoterapia w Bydgoszczy – Indywidualna Terapia na Wyżynach</h1>
-<p>Skuteczna fizjoterapia ortopedyczna i stomatologiczna, indywidualny plan leczenia i komfortowa atmosfera w gabinecie M.Therapy na terenie Bydgoszczy.</p>
+<h1 id="home-title">Fizjoterapia ortopedyczna i stomatologiczna w Bydgoszczy</h1>
+<p>Pomagam wrócić do sprawności po urazach, przeciążeniach i operacjach oraz w dolegliwościach stawów skroniowo‑żuchwowych.</p>
 <div class="cta">
-<a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer">Zarezerwuj Termin</a>
+<a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=hero" target="_blank" rel="noopener noreferrer" data-track="booking">Umów wizytę online</a>
 <a class="btn btn-ghost" href="tel:+48693244517">Zadzwoń: +48 693 244 517</a>
 </div>
 </div>
 </div>
+</section>
+
+<section class="first-visit" aria-labelledby="first-visit-title">
+<div class="section-title">
+<span>Pierwsza wizyta</span>
+<h2 id="first-visit-title">Jak wygląda pierwsza wizyta?</h2>
+</div>
+<ol class="first-visit-steps">
+<li><strong>Rozmowa i wywiad</strong><span>Omówimy Twoje dolegliwości, cel wizyty i dotychczasowe leczenie.</span></li>
+<li><strong>Ocena problemu</strong><span>Sprawdzę ruch, napięcie tkanek i czynniki wpływające na dolegliwości.</span></li>
+<li><strong>Indywidualna terapia</strong><span>Dobiorę metody odpowiednie do aktualnego stanu i celu terapii.</span></li>
+<li><strong>Zalecenia na co dzień</strong><span>Otrzymasz jasne wskazówki dotyczące dalszego postępowania.</span></li>
+</ol>
 </section>
 
 
@@ -138,6 +152,7 @@
                   <div class="section-title">
                       <span>Jak mnie oceniają?</span>
                       <h2>Opinie pacjentów</h2>
+                      <p class="reviews-summary"><strong>5,0/5 na podstawie 151 opinii w ZnanyLekarz</strong><a href="https://www.znanylekarz.pl/monika-frontczak/fizjoterapeuta/bydgoszcz" target="_blank" rel="noopener noreferrer">Zobacz wszystkie opinie</a></p>
                   </div>
               </div>
           </div>
@@ -146,7 +161,7 @@
                   <meta itemprop="ratingValue" content="5">
                   <meta itemprop="bestRating" content="5">
                   <meta itemprop="worstRating" content="1">
-                  <meta itemprop="ratingCount" content="19">
+                  <meta itemprop="ratingCount" content="151">
                   <div class="testimonial__item" itemscope itemtype="https://schema.org/Review">
                       <div class="testimonial__author">
                           <div class="testimonial__author__icon"> 👩‍⚕️
@@ -492,7 +507,7 @@
 <h3>Fizjoterapia Ortopedyczna w Bydgoszczy</h3>
 <p>Profesjonalna fizjoterapia ortopedyczna w Bydgoszczy – leczenie bólów i dysfunkcji układu mięśniowo-szkieletowego, urazów, zwyrodnień i dyskopatii. Przywracamy sprawność i prawidłową biomechanikę.</p>
 <p>Specjalizuję się w terapii pacjentów z bólami kręgosłupa (odcinka szyjnego, piersiowego, lędźwiowego), dolegliwościami stawów obwodowych (bioder, kolan, barków, nadgarstków) oraz dysfunkcjami po przeciążeniach zawodowych i sportowych. Każdy plan terapii jest indywidualnie dopasowany do Twoich potrzeb.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="fizjoterapia-ortopedyczna-bydgoszcz/" class="offer-link">Dowiedz się więcej</a>
 </div>
 </article>
 
@@ -502,7 +517,7 @@
 <h3>Fizjoterapia Stomatologiczna – Bydgoszcz</h3>
 <p>Specjalistyczna fizjoterapia stomatologiczna w Bydgoszczy – kompleksowe leczenie dysfunkcji stawów skroniowo-żuchwowych (TMJ), bólów głowy, bruksizmu (zgrzytania zębami), szumów usznych i zaburzeń słuchu. Rehabilitacja po zabiegach dentystycznych, ekstrakcjach zębów i w trakcie procesu ortodontycznego.</p>
 <p>Fizjoterapia stomatologiczna jest szczególnie wskazana dla pacjentów ze skurczami mięśni żuchwy, ograniczeniem otwarcia ust, bólem podczas żucia, dyskomfortem podczas noszenia aparatu ortodontycznego. Oferuję skuteczną terapię dostosowaną do indywidualnych potrzeb.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="fizjoterapia-stomatologiczna-bydgoszcz/" class="offer-link">Dowiedz się więcej</a>
 </div>
 </article>
 
@@ -512,7 +527,7 @@
 <h3>Rehabilitacja Pourazowa</h3>
 <p>Profesjonalna rehabilitacja pourazowa w Bydgoszczy dla pacjentów po złamaniach, skręceniach stawów, stłuczeniach tkanek, rozciągnięciach więzadeł oraz innych kontuzjach. Nasze podejście zapewnia bezpieczny i szybki powrót do normalnego funkcjonowania.</p>
 <p>Oferuję indywidualnie dobrane ćwiczenia rehabilitacyjne, masaż leczniczy i techniki manualne wspierające gojenie się tkanek. Rehabilitacja pourazowa wymaga systematyczności – wdrażam efektywne plany terapii pozwalające na pełny powrót do zdrowia i aktywności fizycznej.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="rehabilitacja-pooperacyjna-bydgoszcz/" class="offer-link">Dowiedz się więcej</a>
 </div>
 </article>
 
@@ -522,7 +537,7 @@
 <h3>Rehabilitacja Przed I Pooperacyjna</h3>
 <p>Kompleksowe wsparcie przed i po operacji stawu, kręgosłupa, barku lub kolana. Fizjoterapia przedoperacyjna przygotowuje mięśnie i układ krążenia, co przyspiesza powrót do zdrowia. Rehabilitacja pooperacyjna wspomaga gojenie się tkanek i przywrócenie pełnej funkcjonalności.</p>
 <p>Każdy plan jest indywidualnie dopasowany do rodzaju zabiegu, stanu zdrowia pacjenta i jego celów rehabilitacyjnych. Fizjoterapia przed i po operacji znacznie skraca czas powrotu do normalnego funkcjonowania.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="rehabilitacja-pooperacyjna-bydgoszcz/" class="offer-link">Dowiedz się więcej</a>
 </div>
 </article>
 
@@ -532,7 +547,7 @@
 <h3>Medyczny Trening Rehabilitacyjny</h3>
 <p>Medyczny trening rehabilitacyjny to zaplanowany program ćwiczeń specyficznych dla dysfunkcji ruchowych. Trening obejmuje zaawansowane ćwiczenia wzmacniające, nauka prawidłowej ergonomii i stabilizacji stawów oraz korekta błędnych wzorców ruchowych.</p>
 <p>Trening medyczny jest wskazany po urazach i operacjach, jako część rehabilitacji pourazowej, a także dla pacjentów dążących do poprawy kondycji fizycznej i profilaktyki kontuzji. Każdy program dostosowuję do możliwości i celów pacjenta.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=training" class="offer-link" target="_blank" rel="noopener noreferrer" data-track="booking">Umów wizytę</a>
 </div>
 </article>
 
@@ -542,7 +557,7 @@
 <h3>Terapia Blizn</h3>
 <p>Specjalistyczna terapia blizn wspomaga proces gojenia i remodelingowania tkanek. Poprzez techniki manualne, masaż i ćwiczenia poprawiają się czucie, elastyczność i ruchomość okolic blizny. Terapia blizn zmniejsza dyskomfort i ograniczenia funkcjonalne.</p>
 <p>Terapia blizn jest wskazana po operacjach, urazach powodujących rozcięcia czy oparzenia. Wczesne wdrożenie terapii zwiększa efektywność leczenia i poprawia wynik estetyczny blizny.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=scar" class="offer-link" target="_blank" rel="noopener noreferrer" data-track="booking">Umów wizytę</a>
 </div>
 </article>
 
@@ -552,7 +567,7 @@
 <h3>Masaż Leczniczy I Relaksacyjny</h3>
 <p>Masaż leczniczy w Bydgoszczy to godzina relaksu i uzdrowienia. Ręczne techniki masażu redukują napięcie mięśniowe, poprawiają krążenie krwi i limfy, zwiększają elastyczność tkanek, a także zmniejszają ból. Masaż może obejmować sam grzbiet lub grzbiet i kończyny dolne.</p>
 <p>Oferuję masaż z naturalnymi oliwkami oraz opcję masażu aromatycznego ze świecą. Sesja masażu 60 minut to idealna forma relaksu i regeneracji dla pacjentów szukających ulgi w bólach mięśniowych i stresu.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=massage" class="offer-link" target="_blank" rel="noopener noreferrer" data-track="booking">Umów wizytę</a>
 </div>
 </article>
 
@@ -562,7 +577,7 @@
 <h3>Terapia Bruksizmu</h3>
 <p>Terapia bruksizmu (zgrzytania zębami) to kompleksowe podejście kombinujące techniki manualne, masaż mięśni żuchwy, edukację pacjenta oraz wsparcie behawioralne. Bruksizm prowadzi do bólów głowy, zużycia zębów, napięcia w okolicy szyi i pleców – fizjoterapia skutecznie redukuje te objawy.</p>
 <p>Oferuję diagnozę przyczyn bruksizmu i indywidualnie dobrane ćwiczenia oraz techniki relaksacyjne. Terapia bruksizmu jest szczególnie ważna dla pacjentów przed i podczas leczenia ortodontycznego.</p>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" class="offer-link" target="_blank" rel="noopener noreferrer">Umów Wizytę</a>
+<a href="terapia-bruksizmu-bydgoszcz/" class="offer-link">Dowiedz się więcej</a>
 </div>
 </article>
 </div>
@@ -607,51 +622,86 @@
 
 <section id="pricelist" aria-labelledby="pricelist-title">
 <div class="pricelist-content">
-<h2 class="pricelist-title" id="pricelist-title">Cennik</h2>
-<table class="pricing-table">
-<thead>
-<tr>
-<th>Usługa</th>
-<th>Cena</th>
-<th>Opis</th>
-<th>Czas</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="Usługa">Fizjoterapia</td>
-<td data-label="Cena">200 zł</td>
-<td data-label="Opis">Wywiad, diagnostyka oraz indywidualnie dobrana terapia dot. bólu/dysfunkcji aparatu ruchu, czyli mięśni lub stawów.</td>
-<td data-label="Czas">Ok. 45–55 min</td>
-</tr>
-<tr>
-<td data-label="Usługa">Fizjoterapia Stomatologiczna</td>
-<td data-label="Cena">200 zł</td>
-<td data-label="Opis">Wywiad, diagnostyka oraz indywidualnie dobrana terapia dot. problemów w obrębie stawów skroniowo-żuchwowych, bólu głowy/twarzy, szumów usznych, bruksizmu itd.</td>
-<td data-label="Czas">Ok. 45–55 min</td>
-</tr>
-<tr>
-<td data-label="Usługa">Trening Medyczny</td>
-<td data-label="Cena">150 zł</td>
-<td data-label="Opis">Indywidualny trening poprzedzony zwykłą wizytą fizjoterapeutyczną.</td>
-<td data-label="Czas">Ok. 45–60 min</td>
-</tr>
-<tr>
-<td data-label="Usługa">Masaż Leczniczy</td>
-<td data-label="Cena">200 zł</td>
-<td data-label="Opis">Masaż z oliwką, może obejmować sam grzbiet lub grzbiet i kończyny dolne.</td>
-<td data-label="Czas">60 min</td>
-</tr>
-<tr>
-<td data-label="Usługa">Kinesiotaping</td>
-<td data-label="Cena">Od 40 zł</td>
-<td data-label="Opis">Technika stosowana jako terapia wspomagająca.</td>
-<td data-label="Czas"> - </td>
-</tr>
-</tbody>
-</table>
-<div style="margin-top:24px;">
-<a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i">Zarezerwuj Termin</a>
+<div class="section-title">
+<span>Cennik</span>
+<h2 id="pricelist-title">Cennik wizyt</h2>
+</div>
+<p class="pricelist-intro">Wizyta obejmuje wywiad, ocenę problemu i indywidualnie dobraną terapię. Wybierz usługę i umów dogodny termin online.</p>
+
+<div class="pricing-grid">
+<div class="pricing-card pricing-card--featured">
+<div class="pricing-badge">Pierwsza wizyta</div>
+<h3>Fizjoterapia</h3>
+<div class="pricing-price">
+<span class="price-amount">200 zł</span>
+<span class="price-duration">/wizyta</span>
+</div>
+<p class="pricing-description">Wywiad, diagnostyka oraz indywidualnie dobrana terapia dla bólu/dysfunkcji aparatu ruchu.</p>
+<div class="pricing-meta">
+<span class="duration">⏱️ 45–55 min</span>
+</div>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+</div>
+
+<!-- Standard -->
+<div class="pricing-card">
+<h3>Fizjoterapia Stomatologiczna</h3>
+<div class="pricing-price">
+<span class="price-amount">200 zł</span>
+<span class="price-duration">/wizyta</span>
+</div>
+<p class="pricing-description">Specjalistyczna terapia stawów skroniowo-żuchwowych, bruksizmu i bólów głowy.</p>
+<div class="pricing-meta">
+<span class="duration">⏱️ 45–55 min</span>
+</div>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+</div>
+
+<!-- Economy -->
+<div class="pricing-card">
+<h3>Trening Medyczny</h3>
+<div class="pricing-price">
+<span class="price-amount">150 zł</span>
+<span class="price-duration">/wizyta</span>
+</div>
+<p class="pricing-description">Indywidualny trening poprzedzony zwykłą wizytą fizjoterapeutyczną.</p>
+<div class="pricing-meta">
+<span class="duration">⏱️ 45–60 min</span>
+</div>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+</div>
+
+<!-- Extended -->
+<div class="pricing-card">
+<h3>Masaż leczniczy — 60 min</h3>
+<div class="pricing-price">
+<span class="price-amount">200 zł</span>
+<span class="price-duration">/wizyta</span>
+</div>
+<p class="pricing-description">Masaż z oliwką, może obejmować sam grzbiet lub grzbiet i kończyny dolne.</p>
+<div class="pricing-meta">
+<span class="duration">⏱️ 60 min</span>
+</div>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+</div>
+
+<!-- Add-on -->
+<div class="pricing-card pricing-card--addon">
+<h3>Kinesiotaping</h3>
+<div class="pricing-price">
+<span class="price-amount">od 40 zł</span>
+<span class="price-duration">dodatek</span>
+</div>
+<p class="pricing-description">Technika stosowana jako terapia wspomagająca.</p>
+<div class="pricing-meta">
+<span class="duration">⏱️ Do umówienia</span>
+</div>
+<a href="tel:+48693244517" class="btn btn-ghost" style="width:100%; margin-top:auto;">Zapytaj o kinesiotaping</a>
+</div>
+</div>
+
+<div class="pricelist-note">
+<p><strong>Jasne zasady.</strong> Cena obejmuje wizytę i terapię dobraną do Twoich potrzeb. W razie pytań skontaktuj się przed rezerwacją.</p>
 </div>
 </div>
 </section>
@@ -664,19 +714,9 @@
 
 
 <div class="zl-widget" aria-label="Rezerwacja wizyty">
-  <div class="zl-widget__fallback">
-    <div class="zl-widget__fallback-content">
-      <p>Rezerwacja jest dostępna bezpośrednio w ZnanyLekarz.</p>
-      <a class="zl-url" href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer">Umów wizytę</a>
-    </div>
-  </div>
+  <p class="zl-placeholder">Wybierz dogodny termin w aktualnym kalendarzu ZnanyLekarz. Rezerwacja jest bezpłatna i potwierdzana online.</p>
 </div>
-
-<div class="booking-cta">
-<a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer">Otwórz w ZnanyLekarz</a>
-<a class="btn btn-ghost" href="tel:+48693244517">Zadzwoń: +48 693 244 517</a>
-<a class="btn btn-ghost" href="mailto:frontczak.monika.fizjo@gmail.com">Napisz Maila</a>
-</div>
+<a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer">Umów wizytę online</a>
 </div>
 
 <div class="booking-side">
@@ -684,9 +724,9 @@
 <img src="images/booking.jpg" alt="Nowoczesne wnętrze gabinetu M.Therapy" loading="lazy" decoding="async" width="800" height="600">
 </div>
 <ul class="booking-benefits">
-<li>Krótki Czas Oczekiwania</li>
-<li>Indywidualna Terapia</li>
-<li>Komfortowa Atmosfera</li>
+<li>Pierwsza wizyta: ok. 45–55 min</li>
+<li>Płatność: karta, BLIK lub gotówka</li>
+<li>Gabinet: Bohaterów Kragujewca 2</li>
 </ul>
 </div>
 </div>
@@ -699,64 +739,50 @@
 </div>
 
 <div class="faq-item">
-<div class="faq-question">Czy Przed Rozpoczęciem Fizjoterapii Konieczne Są Badania MR, RTG, USG, CT?</div>
-<div class="faq-answer">
+<button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">Czy przed rozpoczęciem fizjoterapii potrzebne są badania MR, RTG, USG lub CT?</button>
+<div class="faq-answer" id="faq-answer-1" hidden>
 Posiadanie badań nie jest obowiązkowe. Jeśli natomiast pacjent ma wyniki badań lub inną dokumentację dot. leczenia, to wskazane jest pokazanie ich podczas pierwszej wizyty w gabinecie. Jeśli wystąpi taka konieczność, fizjoterapeuta poinformuje pacjenta o konieczności przeprowadzenia szczegółowej diagnostyki obrazowej lub badań u lekarza specjalisty.
 </div>
 </div>
 
 <div class="faq-item">
-<div class="faq-question">Czy Po Fizjoterapii Może Pojawić Się Ból?</div>
-<div class="faq-answer">
+<button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">Czy po fizjoterapii może pojawić się ból?</button>
+<div class="faq-answer" id="faq-answer-2" hidden>
 Niektóre techniki terapeutyczne mogą powodować czasowy dyskomfort lub ból, który ustępuje po kilku godzinach/dniach. Jest to naturalny proces. Jeśli dolegliwości utrzymują się przez dłuższy czas lub są bardzo uciążliwe, należy skonsultować się z fizjoterapeutą.
 </div>
 </div>
 
 <div class="faq-item">
-<div class="faq-question">Jaki Wpływ Ma Współpraca Pacjenta Z Fizjoterapeutą Na Efekty Terapii?</div>
-<div class="faq-answer">
+<button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">Jaki wpływ ma współpraca pacjenta na efekty terapii?</button>
+<div class="faq-answer" id="faq-answer-3" hidden>
 Fizjoterapia to proces, w którym kluczowe znaczenie ma aktywne zaangażowanie pacjenta i jego pełne zrozumienie przebiegu leczenia. Świadome uczestnictwo pacjenta wpływa na skuteczność terapii i może znacząco poprawić wyniki rehabilitacji. Aby uzyskać długotrwały efekt konieczna jest współpraca pacjenta z fizjoterapeutą, m.in. samodzielna praca pacjenta (np. wykonywanie ćwiczeń zadanych przez fizjoterapeutę) oraz przestrzeganie zaleceń.
 </div>
 </div>
 
 <div class="faq-item">
-<div class="faq-question">Czy Można Wykupić Pakiet Zabiegów?</div>
-<div class="faq-answer">
+<button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">Czy można wykupić pakiet zabiegów?</button>
+<div class="faq-answer" id="faq-answer-4" hidden>
 Oferta nie obejmuje pakietów zabiegów fizjoterapeutycznych. Ilość i częstotliwość wizyt ustalana jest indywidualnie na bieżąco podczas procesu terapeutycznego.
 </div>
 </div>
 
 <div class="faq-item">
-<div class="faq-question">Czy Można Zrealizować Zabiegi W Ramach NFZ?</div>
-<div class="faq-answer">
+<button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">Czy można zrealizować zabiegi w ramach NFZ?</button>
+<div class="faq-answer" id="faq-answer-5" hidden>
 Nie wykonujemy zabiegów refundowanych przez NFZ.
 </div>
 </div>
 </section>
 
 
-<section class="service-areas" aria-label="Obszar obsługi">
+<section class="service-areas" aria-labelledby="location-title">
 <div class="service-areas-content">
 <div class="section-title">
-<span>Obszar Obsługi</span>
-<h2>Fizjoterapia dostępna w Bydgoszczy i okolicach</h2>
+<span>Lokalizacja</span>
+<h2 id="location-title">Gabinet na Wyżynach w Bydgoszczy</h2>
 </div>
-<p>Gabinet M.Therapy znajduje się w dzielnicy Wyżyny w Bydgoszczy. Przyjmuję pacjentów z całego miasta, w tym z następujących dzielnic i okolic:</p>
-<div class="areas-grid">
-<div class="area-item"><strong>Wyżyny</strong> – główna lokalizacja gabinetu</div>
-<div class="area-item">Glinki</div>
-<div class="area-item">Kapuściska</div>
-<div class="area-item">Górzyskowo</div>
-<div class="area-item">Wzgórze Wolności</div>
-<div class="area-item">Szwederowo</div>
-<div class="area-item">Bartodzieje</div>
-<div class="area-item">Bielawy</div>
-<div class="area-item">Śródmieście</div>
-<div class="area-item">Miedzyń</div>
-<div class="area-item">Fordon</div>
-<div class="area-item">Osowa Góra</div>
-</div>
-<p><strong>Fizjoterapia w Bydgoszczy dla każdego!</strong> Niezależnie od tego, gdzie mieszkasz w naszym mieście, zapraszam Cię do gabinetu fizjoterapii M.Therapy. Specjalizuję się w fizjoterapii ortopedycznej, fizjoterapii stomatologicznej, rehabilitacji pourazowej i innych usługach zdrowotnych.</p>
+<p>Gabinet M.Therapy znajduje się na Wyżynach przy ul. Bohaterów Kragujewca 2 w Bydgoszczy. Przyjmuję pacjentów z całego miasta i okolic.</p>
+<a class="btn btn-ghost" href="#contact">Zobacz dojazd i kontakt</a>
 </div>
 </section>
 
@@ -822,6 +848,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
 </ul>
 </address>
 <div class="footer-socials">
+<a aria-label="Facebook" href="https://www.facebook.com/people/MTherapy-Fizjoterapia-Monika-Frontczak/100072224717578/" target="_blank" rel="noopener noreferrer" class="soc fb">f</a>
 <a aria-label="Instagram" href="https://www.instagram.com/fizjo.monczis/" target="_blank" rel="noopener noreferrer" class="soc ig">
 <img src="images/instagram.svg" alt="Instagram – M.Therapy" loading="lazy" decoding="async">
 </a>
@@ -835,7 +862,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
 
 <div class="footer-bottom">
 <span>© M.Therapy Monika Frontczak</span>
-<span>PWZF: 66138</span>
+<span>PWZ: 66138</span>
 </div>
 </footer>
 
@@ -849,6 +876,14 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
   "url": "https://mtherapy.pl/",
   "telephone": "+48 693 244 517",
   "email": "frontczak.monika.fizjo@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "mgr Monika Frontczak",
+    "jobTitle": "Fizjoterapeutka",
+    "identifier": "PWZ 66138"
+  },
+  "paymentAccepted": "Gotówka, karta płatnicza, BLIK",
+  "currenciesAccepted": "PLN",
   "image": [
     "https://mtherapy.pl/images/gabinet.jpg",
     "https://mtherapy.pl/images/monika.jpg"
@@ -881,7 +916,10 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
     }
   ],
   "medicalSpecialty": ["Physical Therapy", "Orthopedic", "Dentistry"],
-  "sameAs": ["https://www.instagram.com/fizjo.monczis/"],
+  "sameAs": [
+    "https://www.instagram.com/fizjo.monczis/",
+    "https://www.facebook.com/people/MTherapy-Fizjoterapia-Monika-Frontczak/100072224717578/"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Usługi fizjoterapeutyczne",
@@ -1036,7 +1074,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
   ]
 }
 </script>
-<script src="script.min.js" defer></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

@@ -1,11 +1,34 @@
 
 
-// FAQ toggle
 document.addEventListener('DOMContentLoaded', () => {
-const questions = document.querySelectorAll('.faq-question');
-questions.forEach(q => {
-q.addEventListener('click', () => {
-q.parentElement.classList.toggle('active');
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.getElementById('primary-navigation');
+
+menuToggle?.addEventListener('click', () => {
+const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+menuToggle.setAttribute('aria-expanded', String(!isOpen));
+navigation?.classList.toggle('is-open', !isOpen);
+});
+
+document.querySelectorAll('.main-list a').forEach((link) => {
+link.addEventListener('click', () => {
+menuToggle?.setAttribute('aria-expanded', 'false');
+navigation?.classList.remove('is-open');
+});
+});
+
+document.querySelectorAll('.faq-question').forEach((button) => {
+button.addEventListener('click', () => {
+const answer = document.getElementById(button.getAttribute('aria-controls'));
+const isOpen = button.getAttribute('aria-expanded') === 'true';
+button.setAttribute('aria-expanded', String(!isOpen));
+if (answer) answer.hidden = isOpen;
+});
+
+document.querySelectorAll('[data-track="booking"]').forEach((link) => {
+link.addEventListener('click', () => {
+window.dataLayer?.push({ event: 'booking_click', source: link.dataset.track });
+});
 });
 });
 
