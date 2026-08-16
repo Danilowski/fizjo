@@ -50,7 +50,12 @@ if (answer) answer.hidden = isOpen;
 
 document.querySelectorAll('[data-track="booking"]').forEach((link) => {
 link.addEventListener('click', () => {
-window.dataLayer?.push({ event: 'booking_click', source: link.dataset.track });
+const source = link.dataset.track;
+window.dataLayer?.push({ event: 'booking_click', source });
+window.gtag?.('event', 'generate_lead', {
+  lead_source: source,
+  link_url: link.href
+});
 });
 });
 });
