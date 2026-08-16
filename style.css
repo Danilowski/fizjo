@@ -72,6 +72,9 @@ header{ background:var(--navy-900); padding:var(--sp-4) var(--sp-6); position:st
 .main-list li a:hover{ background:rgba(255,255,255,0.08); color:#e9f3ff; }
 .appointmentwithme{ padding:10px 18px; border-radius:999px; border:2px solid var(--white); }
 .menu-toggle{ display:none; }
+.submenu-toggle{ display:none; }
+.mobile-action-bar{ display:none; }
+a:focus-visible,button:focus-visible{ outline:3px solid var(--gold-300); outline-offset:3px; }
 
 /* Dropdown czysto, bez !important */
 /* DROPDOWN – widoczność i kontrast */
@@ -413,7 +416,7 @@ header{ padding:12px 12px; }
 .offer-body{ padding:12px; gap:8px; }
 .offer-body h3{ font-size:16px; line-height:1.25; }
 .offer-body p{ font-size:12px; line-height:1.45; }
-.offer-link{ padding-right:0; font-size:12px; }
+.offer-link{ padding-right:20px; font-size:12px; }
 .tech-effects{ margin-top:24px; padding:16px; }
 .tech-effects h3{ margin-bottom:8px; font-size:20px; }
 .tech-effects ul{ padding-left:16px; font-size:14px; line-height:1.5; }
@@ -663,7 +666,7 @@ transition: transform .25s var(--ease), box-shadow .25s var(--ease);
 .reviews-summary{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; margin:var(--sp-3) 0 0; color:var(--text-700); }
 .reviews-summary a{ font-weight:700; }
 
-@media (max-width:760px){
+@media (max-width:992px){
   .inside-header{ flex-wrap:wrap; gap:12px; }
   .menu-toggle{ display:inline-flex; align-items:center; gap:8px; margin-left:auto; padding:9px 12px; border:1px solid rgba(255,255,255,.55); border-radius:9px; background:transparent; color:var(--white); font:inherit; font-weight:700; cursor:pointer; }
   .menu-toggle__icon{ font-size:18px; line-height:1; }
@@ -673,8 +676,30 @@ transition: transform .25s var(--ease), box-shadow .25s var(--ease);
   .main-list li,.main-list li a{ display:block; width:100%; }
   .main-list li a{ padding:12px 14px; font-size:16px; white-space:normal; }
   .appointmentwithme{ border-width:1px; }
-  .dropdown-content{ position:static; display:none; min-width:0; margin:4px 0 0; opacity:1; visibility:visible; transform:none; box-shadow:none; }
-  .dropdown:focus-within .dropdown-content,.dropdown:hover .dropdown-content{ display:block; }
+  .dropdown{ display:grid; grid-template-columns:1fr auto; align-items:center; }
+  .dropdown > a{ grid-column:1; }
+  .submenu-toggle{ display:inline-flex; grid-column:2; align-items:center; justify-content:center; width:44px; height:44px; border:0; border-radius:8px; background:transparent; color:var(--white); font-size:22px; cursor:pointer; }
+  .submenu-toggle[aria-expanded="true"] span{ transform:rotate(180deg); }
+  .dropdown-content{ grid-column:1 / -1; position:static; display:none; min-width:0; margin:4px 0 0; opacity:1; visibility:visible; transform:none; box-shadow:none; }
+  .dropdown-content.is-open{ display:block; }
+  body{ padding-bottom:72px; }
+  .mobile-action-bar{ position:fixed; right:0; bottom:0; left:0; z-index:110; display:grid; grid-template-columns:1fr 1.25fr; gap:8px; padding:10px 16px; background:rgba(255,255,255,.97); border-top:1px solid var(--silver-300); box-shadow:0 -4px 18px rgba(0,0,0,.12); }
+  .mobile-action-bar a{ display:flex; align-items:center; justify-content:center; min-height:48px; border-radius:999px; font-weight:700; text-decoration:none; }
+  .mobile-action-bar__call{ border:1px solid var(--navy-900); color:var(--navy-900); background:var(--white); }
+  .mobile-action-bar__book{ color:var(--white); background:var(--navy-900); }
+}
+
+@media (max-width:560px){
+  .offers-grid{ grid-template-columns:1fr; }
+  .offer-body p{ font-size:14px; line-height:1.55; }
+  .offer-link{ font-size:14px; }
+  .testimonial__slider .testimonial__item{ flex:0 0 86%; width:86%; }
+  .testimonial__item{ padding:14px; }
+  .testimonial__author__text h5{ font-size:16px; }
+  .testimonial__author__text span{ font-size:12px; }
+  .testimonial__item p{ font-size:14px; line-height:1.5; }
+  #certificates .gallery .gallery-item{ flex:0 0 82%; width:82%; }
+  #certificates .gallery .gallery-item figcaption{ font-size:14px; }
 }
 
 @media (prefers-reduced-motion:reduce){

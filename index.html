@@ -66,7 +66,8 @@
 <li><a href="#aboutme">O Mnie</a></li>
 <li class="dropdown">
 <a href="#offer">Oferta</a>
-<div class="dropdown-content">
+<button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="offer-submenu" aria-label="Rozwiń menu Oferta"><span aria-hidden="true">⌄</span></button>
+<div class="dropdown-content" id="offer-submenu">
 <a href="fizjoterapia-ortopedyczna-bydgoszcz/">Fizjoterapia ortopedyczna</a>
 <a href="fizjoterapia-stomatologiczna-bydgoszcz/">Fizjoterapia stomatologiczna</a>
 <a href="terapia-bruksizmu-bydgoszcz/">Terapia bruksizmu</a>
@@ -812,7 +813,7 @@ Nie wykonujemy zabiegów refundowanych przez NFZ.
 
 <div class="map-card">
 <div class="map-embed">
-<iframe loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+<iframe title="Mapa dojazdu do gabinetu M.Therapy w Bydgoszczy" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d18.0300744!3d53.105619499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ccd2da3f72f2d69%3A0x7a9ef00ea9429078!2sM.Therapy%20Fizjoterapia%20Monika%20Frontczak!5e0!3m2!1spl!2spl!4v1784547072842!5m2!1spl!2spl"></iframe>
 </div>
 </div>
@@ -821,6 +822,10 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
 
 
 </main>
+<div class="mobile-action-bar" aria-label="Szybki kontakt">
+<a class="mobile-action-bar__call" href="tel:+48693244517">Zadzwoń</a>
+<a class="mobile-action-bar__book" href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=mobile_bar" target="_blank" rel="noopener noreferrer" data-track="booking">Umów online</a>
+</div>
 <footer class="site-footer">
 <div class="footer-grid">
 <div class="footer-brand">

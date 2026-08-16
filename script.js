@@ -10,6 +10,29 @@ menuToggle.setAttribute('aria-expanded', String(!isOpen));
 navigation?.classList.toggle('is-open', !isOpen);
 });
 
+const submenuToggle = document.querySelector('.submenu-toggle');
+const offerSubmenu = document.getElementById('offer-submenu');
+
+submenuToggle?.addEventListener('click', () => {
+const isOpen = submenuToggle.getAttribute('aria-expanded') === 'true';
+submenuToggle.setAttribute('aria-expanded', String(!isOpen));
+offerSubmenu?.classList.toggle('is-open', !isOpen);
+});
+
+document.addEventListener('keydown', (event) => {
+if (event.key !== 'Escape') return;
+if (submenuToggle?.getAttribute('aria-expanded') === 'true') {
+submenuToggle.setAttribute('aria-expanded', 'false');
+offerSubmenu?.classList.remove('is-open');
+submenuToggle.focus();
+}
+if (menuToggle?.getAttribute('aria-expanded') === 'true') {
+menuToggle.setAttribute('aria-expanded', 'false');
+navigation?.classList.remove('is-open');
+menuToggle.focus();
+}
+});
+
 document.querySelectorAll('.main-list a').forEach((link) => {
 link.addEventListener('click', () => {
 menuToggle?.setAttribute('aria-expanded', 'false');
