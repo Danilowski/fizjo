@@ -15,15 +15,32 @@ menuToggle?.addEventListener('click', () => {
 const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
 menuToggle.setAttribute('aria-expanded', String(!isOpen));
 navigation?.classList.toggle('is-open', !isOpen);
+if (isOpen) {
+  submenuToggle?.setAttribute('aria-expanded', 'false');
+  offerSubmenu?.classList.remove('is-open');
+  dropdownLink?.classList.remove('submenu-open');
+}
 });
 
 const submenuToggle = document.querySelector('.submenu-toggle');
 const offerSubmenu = document.getElementById('offer-submenu');
+const dropdownLink = document.querySelector('.dropdown > a');
 
 submenuToggle?.addEventListener('click', () => {
 const isOpen = submenuToggle.getAttribute('aria-expanded') === 'true';
 submenuToggle.setAttribute('aria-expanded', String(!isOpen));
 offerSubmenu?.classList.toggle('is-open', !isOpen);
+});
+
+// On mobile: Oferta link itself toggles submenu (submenuToggle is hidden)
+dropdownLink?.addEventListener('click', (e) => {
+if (getComputedStyle(submenuToggle).display === 'none') {
+  e.preventDefault();
+  const isOpen = submenuToggle.getAttribute('aria-expanded') === 'true';
+  submenuToggle.setAttribute('aria-expanded', String(!isOpen));
+  offerSubmenu?.classList.toggle('is-open', !isOpen);
+  dropdownLink.classList.toggle('submenu-open', !isOpen);
+}
 });
 
 document.addEventListener('keydown', (event) => {
@@ -42,8 +59,10 @@ menuToggle.focus();
 
 document.querySelectorAll('.main-list a').forEach((link) => {
 link.addEventListener('click', () => {
-menuToggle?.setAttribute('aria-expanded', 'false');
-navigation?.classList.remove('is-open');
+  // Nie zamykaj menu przy tapnięciu w Oferta (to toggle submenu, nie nawigacja)
+  if (link.matches('.dropdown > a') && getComputedStyle(submenuToggle).display === 'none') return;
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  navigation?.classList.remove('is-open');
 });
 });
 
@@ -160,5 +179,25 @@ if (certificateSlider && certificateItems.length) {
       certificateModal.hidden = true;
       certificateModal.setAttribute('aria-hidden', 'true');
     });
+  });
+
+  certificateModal?.querySelector('.certificate-modal__prev')?.addEventListener('click', () => {
+    const newIndex = Math.max(0, certificateIndex - 1);
+    const img = certificateItems[newIndex]?.querySelector('img');
+    if (img && certificateModalImage) {
+      certificateModalImage.src = img.src;
+      certificateModalImage.alt = img.alt || 'Pogląd certyfikatu';
+      certificateIndex = newIndex;
+    }
+  });
+
+  certificateModal?.querySelector('.certificate-modal__next')?.addEventListener('click', () => {
+    const newIndex = Math.min(certificateItems.length - 1, certificateIndex + 1);
+    const img = certificateItems[newIndex]?.querySelector('img');
+    if (img && certificateModalImage) {
+      certificateModalImage.src = img.src;
+      certificateModalImage.alt = img.alt || 'Pogląd certyfikatu';
+      certificateIndex = newIndex;
+    }
   });
 }

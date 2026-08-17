@@ -18,6 +18,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.min.css">
+  <link rel="preload" as="image" href="../images/optimized/monika.jpg" media="(min-width:701px)" fetchpriority="high">
+  <link rel="preload" as="image" href="../images/optimized/mobile/monika.jpg" media="(max-width:700px)" fetchpriority="high">
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="M.Therapy">
@@ -29,13 +31,16 @@
   <meta name="twitter:title" content="Pierwsza wizyta u fizjoterapeuty | M.Therapy Bydgoszcz">
   <meta name="twitter:description" content="Dowiedz się, jak przygotować się do pierwszej wizyty w M.Therapy. Przebieg konsultacji i co zabrać ze sobą.">
   <meta name="twitter:image" content="https://mtherapy.pl/images/monika.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://mtherapy.pl/"},{"@type":"ListItem","position":2,"name":"Pierwsza wizyta u fizjoterapeuty","item":"https://mtherapy.pl/pierwsza-wizyta/"}]}
+</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Przejdź do treści</a>
   <div class="upper-header" role="complementary" aria-label="Informacje kontaktowe">
     <div class="upper-header-content">
       <a href="https://maps.google.com/?q=M.Therapy+Fizjoterapia+Monika+Frontczak+ul.+Bohaterow+Kragujewca+2+Bydgoszcz" target="_blank" rel="noopener noreferrer" aria-label="Otwórz w Google Maps">📍 M.Therapy, ul. Bohaterów Kragujewca 2, 85-863 Bydgoszcz</a>
-      <div>📞 <a href="tel:+48 693 244 517">+48 693 244 517</a></div>
+      <div>📞 <a href="tel:+48693244517">+48 693 244 517</a></div>
     </div>
   </div>
   <header>
@@ -51,14 +56,22 @@
       </nav>
     </div>
   </header>
+
+<nav class="breadcrumb" aria-label="Ścieżka nawigacji">
+<ol>
+<li><a href="/">Strona główna</a></li>
+<li aria-current="page">Pierwsza wizyta</li>
+</ol>
+</nav>
+
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art"><img src="../images/optimized/monika.jpg" srcset="../images/optimized/mobile/monika.jpg 640w, ../images/optimized/monika.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Pierwsza wizyta u fizjoterapeuty M.Therapy" decoding="async" width="960" height="1200"></div>
+      <div class="hero-art"><img src="../images/optimized/monika.jpg" srcset="../images/optimized/mobile/monika.jpg 640w, ../images/optimized/monika.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Pierwsza wizyta u fizjoterapeuty M.Therapy" decoding="async" fetchpriority="high" width="960" height="1200"></div>
       <div class="hero-copy page-hero">
         <p class="eyebrow">Pierwsza wizyta</p>
         <h1 id="hero-title">Przygotuj się do pierwszej wizyty w M.Therapy</h1>
         <p>Dowiedz się, jak wygląda fizjoterapia i jak przygotować się do pierwszego spotkania z fizjoterapeutą.</p>
-        <div class="cta"><a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=first_visit" target="_blank" rel="noopener noreferrer">Umów wizytę online</a><a class="btn btn-ghost" href="tel:+48 693 244 517" data-track="phone_call">Zadzwoń: +48 693 244 517</a></div>
+        <div class="cta"><a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=first_visit" target="_blank" rel="noopener noreferrer">Umów wizytę online</a><a class="btn btn-ghost" href="tel:+48693244517" data-track="phone_call">Zadzwoń: +48 693 244 517</a></div>
       </div>
     </section>
     <div class="page-grid">

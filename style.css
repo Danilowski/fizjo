@@ -334,8 +334,8 @@ color:var(--navy-900); font-weight:600; font-size:var(--fs-small);
 }
 .badge-alt{ background:#e8f3ff; }
 
-.map-embed{ aspect-ratio:16/10; border-radius:var(--radius-m); overflow:hidden; box-shadow:var(--shadow-m); }
-.map-embed iframe{ width:100%; height:100%; border:0; display:block; }
+.map-embed{ aspect-ratio:16/10; border-radius:var(--radius-m); overflow:hidden; box-shadow:var(--shadow-m); position:relative; }
+.map-embed iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block; }
 
 /* Footer */
 .site-footer{ background:var(--navy-900); color:var(--white); padding:var(--sp-7) var(--sp-6) var(--sp-5); margin-top:var(--sp-7); }
@@ -718,11 +718,12 @@ border-radius: var(--radius-m); padding: var(--sp-5); box-shadow: var(--shadow-s
   .main-list li,.main-list li a{ display:block; width:100%; }
   .main-list li a{ padding:12px 14px; font-size:16px; white-space:normal; }
   .appointmentwithme{ border-width:1px; }
-  .dropdown{ display:grid; grid-template-columns:1fr auto; align-items:center; }
-  .dropdown > a{ grid-column:1; width:auto; min-width:0; }
-  .submenu-toggle{ display:inline-flex; grid-column:2; align-items:center; justify-content:center; width:44px; height:44px; border:0; border-radius:8px; background:transparent; color:var(--white); font-size:22px; cursor:pointer; }
-  .submenu-toggle[aria-expanded="true"] span{ transform:rotate(180deg); }
-  .dropdown-content{ grid-column:1 / -1; position:static; display:none; min-width:0; margin:4px 0 0; opacity:1; visibility:visible; transform:none; box-shadow:none; }
+  .dropdown{ display:block; }
+  .main-list .dropdown > a{ display:flex; justify-content:space-between; align-items:center; width:100%; }
+  .main-list .dropdown > a::after{ content:'⌄'; font-size:1.2em; opacity:0.85; transition:transform 0.25s var(--ease); margin-left:8px; flex-shrink:0; }
+  .main-list .dropdown > a.submenu-open::after{ transform:rotate(180deg); }
+  .submenu-toggle{ display:none; }
+  .dropdown-content{ position:static; display:none; min-width:0; margin:4px 0 0; opacity:1; visibility:visible; transform:none; box-shadow:none; }
   .dropdown-content.is-open{ display:block; }
   .mobile-action-bar{ position:fixed; right:0; bottom:0; left:0; z-index:110; display:grid; grid-template-columns:1fr 1.25fr; gap:8px; padding:10px 16px; background:rgba(255,255,255,.97); border-top:1px solid var(--silver-300); box-shadow:0 -4px 18px rgba(0,0,0,.12); }
   .mobile-action-bar a{ display:flex; align-items:center; justify-content:center; min-height:48px; border-radius:999px; font-weight:700; text-decoration:none; }
@@ -731,8 +732,6 @@ border-radius: var(--radius-m); padding: var(--sp-5); box-shadow: var(--shadow-s
 }
 
 @media (max-width:560px){
-  .submenu-toggle{ width:36px; height:36px; font-size:18px; padding:0; }
-  .dropdown{ grid-template-columns:1fr 36px; gap:4px; }
   body{ padding-bottom:72px; }
   .offer-body p{ font-size:14px; line-height:1.55; }
   .offer-link{ font-size:14px; }
@@ -836,6 +835,16 @@ border-radius: var(--radius-m); padding: var(--sp-5); box-shadow: var(--shadow-s
 }
 
 .contact-list ul, .footer-contact address ul { list-style: none; padding: 0; margin: 0; }
+
+/* Kontakt i dojazd – page-specific grid layout */
+.kontakt-page-grid{ display:grid; grid-template-columns:minmax(0,1.55fr) minmax(260px,0.9fr); gap:var(--sp-5); margin-top:var(--sp-6); align-items:start; }
+.kontakt-page-grid .page-content,
+.kontakt-page-grid .page-aside{ min-width:0; }
+.kontakt-page-grid .map-card{ margin-top:var(--sp-4); padding:0; overflow:hidden; border-radius:var(--radius-l); border:1px solid var(--silver-300); background:var(--white); box-shadow:var(--shadow-s); }
+.kontakt-page-grid .map-embed{ position:relative; width:100%; height:auto; aspect-ratio:3/2; min-height:240px; overflow:hidden; background:var(--silver-200); }
+.kontakt-page-grid .map-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+@media (max-width:992px){ .kontakt-page-grid{ grid-template-columns:1fr; } }
+@media (max-width:560px){ .kontakt-page-grid .map-embed{ min-height:200px; } }
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{ scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
