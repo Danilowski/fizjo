@@ -130,7 +130,7 @@ if (testimonialSlider && testimonialItems.length) {
     const safeIndex = Math.max(0, Math.min(index, testimonialItems.length - 1));
     currentIndex = safeIndex;
     const targetItem = testimonialItems[safeIndex];
-    targetItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    testimonialSlider.scrollTo({ left: targetItem.offsetLeft, behavior: 'smooth' });
   };
 
   document.querySelectorAll('.testimonials .testimonial-nav-btn:not(.certificate-nav-btn)').forEach(btn => {
@@ -153,7 +153,7 @@ if (certificateSlider && certificateItems.length) {
     const safeIndex = Math.max(0, Math.min(index, certificateItems.length - 1));
     certificateIndex = safeIndex;
     const targetItem = certificateItems[safeIndex];
-    targetItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    certificateSlider.scrollTo({ left: targetItem.offsetLeft, behavior: 'smooth' });
   };
 
   document.querySelectorAll('#certificates .certificate-nav-btn').forEach(btn => {
