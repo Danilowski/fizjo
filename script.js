@@ -95,8 +95,10 @@ window.gtag?.('event', 'generate_lead', {
 // Smooth scroll z kompensacją sticky header
 document.querySelectorAll('a[href^="#"]').forEach(a => {
 a.addEventListener('click', e => {
-const id = a.getAttribute('href').slice(1);
-const el = document.getElementById(id);
+  // Nie scrolluj gdy link Oferta jest togglem submenu na mobilach
+  if (a.matches('.dropdown > a') && getComputedStyle(submenuToggle).display === 'none') return;
+  const id = a.getAttribute('href').slice(1);
+  const el = document.getElementById(id);
 if (el) {
 e.preventDefault();
 const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
