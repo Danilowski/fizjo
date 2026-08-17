@@ -1,6 +1,13 @@
 
 
+// ── Zaktualizuj tę liczbę po każdej synchronizacji z ZnanyLekarz
+const REVIEW_COUNT = 160;
+const HEADER_HEIGHT = 80;      // sticky header offset
+const REVEAL_THRESHOLD = 0.12; // IntersectionObserver visibility threshold
+const CAROUSEL_SPEED = 500;    // ms, carousel animation speed
+
 document.addEventListener('DOMContentLoaded', () => {
+document.querySelectorAll('.js-review-count').forEach(el => { el.textContent = REVIEW_COUNT; });
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.getElementById('primary-navigation');
 
@@ -46,14 +53,20 @@ const answer = document.getElementById(button.getAttribute('aria-controls'));
 const isOpen = button.getAttribute('aria-expanded') === 'true';
 button.setAttribute('aria-expanded', String(!isOpen));
 if (answer) answer.hidden = isOpen;
+if (!isOpen) {
+  window.gtag?.('event', 'faq_open', { question: button.textContent.trim().substring(0, 60) });
+}
 });
 
-document.querySelectorAll('[data-track="booking"]').forEach((link) => {
+document.querySelectorAll('[data-track]').forEach((link) => {
 link.addEventListener('click', () => {
-const source = link.dataset.track;
-window.dataLayer?.push({ event: 'booking_click', source });
+const trackType = link.dataset.track;
+const params = link.href.includes('?') ? new URLSearchParams(link.href.split('?')[1]) : new URLSearchParams();
+const campaign = params.get('utm_campaign') || trackType;
+window.dataLayer?.push({ event: trackType + '_click', campaign });
 window.gtag?.('event', 'generate_lead', {
-  lead_source: source,
+  lead_source: trackType,
+  lead_campaign: campaign,
   link_url: link.href
 });
 });
@@ -67,7 +80,7 @@ const id = a.getAttribute('href').slice(1);
 const el = document.getElementById(id);
 if (el) {
 e.preventDefault();
-const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
 window.scrollTo({ top: y, behavior: 'smooth' });
 }
 });
@@ -82,22 +95,9 @@ e.target.classList.add('in');
 io.unobserve(e.target);
 }
 });
-}, { threshold: 0.12 });
+}, { threshold: REVEAL_THRESHOLD });
 revealTargets.forEach(el => io.observe(el));
 });
-
-if (window.$ && window.$.fn && typeof window.$.fn.owlCarousel === 'function') {
-  // Certyfikaty – manualne przewijanie przyciskami
-  $("#certificates .gallery").owlCarousel({
-    loop: true,
-    margin: 18,
-    nav: false,
-    dots: false,
-    autoplay: false,
-    smartSpeed: 500,
-    responsive: { 0:{items:2}, 600:{items:3}, 1000:{items:5} }
-  });
-}
 
 const testimonialSlider = document.querySelector('.testimonial__slider');
 const testimonialItems = Array.from(document.querySelectorAll('.testimonial__item'));
@@ -162,73 +162,3 @@ if (certificateSlider && certificateItems.length) {
     });
   });
 }
-
-// Auto-scroll carousels (per-card smooth auto-advance, seamless loop)
-document.addEventListener('DOMContentLoaded', () => {
-    function makeContinuousCarousel(selector, intervalMs){
-        const container = document.querySelector(selector);
-        if(!container) return;
-        const originals = Array.from(container.children).filter(n => n.nodeType===1);
-        if(originals.length <= 1) return;
-
-        // Clone originals to allow seamless looping
-        originals.forEach(node => {
-            const clone = node.cloneNode(true);
-            clone.setAttribute('aria-hidden','true');
-            container.appendChild(clone);
-        });
-
-        // Recompute items and positions
-        const items = Array.from(container.children).filter(n => n.nodeType===1);
-        const positions = items.map(it => it.offsetLeft);
-
-        let index = 0; // index into items array
-        let paused = false;
-        const smoothDuration = 500; // ms (approx) for smooth scroll
-
-        container.style.scrollBehavior = 'smooth';
-
-        container.addEventListener('mouseenter', () => { paused = true; });
-        container.addEventListener('mouseleave', () => { paused = false; });
-        container.addEventListener('focusin', () => { paused = true; });
-        container.addEventListener('focusout', () => { paused = false; });
-
-        // helper to scroll to item index with centering
-        function scrollToItem(i){
-            const item = items[i];
-            if(!item) return;
-            const offset = item.offsetLeft - Math.max(0, (container.clientWidth - item.clientWidth) / 2);
-            container.scrollTo({ left: offset, behavior: 'smooth' });
-        }
-
-        // initial center
-        setTimeout(() => scrollToItem(0), 50);
-
-        const timer = setInterval(() => {
-            if(paused) return;
-            index++;
-            scrollToItem(index);
-
-            // when we've scrolled into the cloned half, jump back to original index
-            if(index >= originals.length){
-                // after smooth animation completes, reset to original index without animation
-                setTimeout(() => {
-                    container.style.scrollBehavior = 'auto';
-                    // compute equivalent original index and scroll to it
-                    const resetIndex = index - originals.length;
-                    const resetOffset = items[resetIndex].offsetLeft - Math.max(0, (container.clientWidth - items[resetIndex].clientWidth) / 2);
-                    container.scrollLeft = resetOffset;
-                    // restore smooth behavior
-                    setTimeout(() => { container.style.scrollBehavior = 'smooth'; }, 20);
-                    index = resetIndex;
-                }, smoothDuration + 40);
-            }
-        }, intervalMs || 1000);
-
-        // keep positions updated on resize
-        window.addEventListener('resize', () => setTimeout(() => { items.forEach((it,i) => positions[i] = it.offsetLeft); scrollToItem(index); }, 120));
-
-        return { stop: () => clearInterval(timer) };
-    }
-
-});

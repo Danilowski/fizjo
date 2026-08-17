@@ -28,9 +28,11 @@
 <link rel="alternate" hreflang="x-default" href="https://mtherapy.pl/">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="style.css" as="style">
+<link rel="preload" href="style.min.css" as="style">
+<link rel="preload" as="image" href="images/optimized/medium/gabinet.jpg" media="(min-width:701px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/optimized/mobile/gabinet.jpg" media="(max-width:700px)" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.min.css">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
@@ -48,6 +50,18 @@
 <meta name="twitter:image" content="https://mtherapy.pl/images/gabinet.jpg">
 <meta name="twitter:image:width" content="1200">
 <meta name="twitter:image:height" content="800">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Fizjoterapia","description":"Profesjonalna fizjoterapia ortopedyczna w Bydgoszczy - leczenie bólu i dysfunkcji układu mięśniowo-szkieletowego, urazów, zwyrodnień i dyskopatii.","provider":{"@type":"LocalBusiness","@id":"https://mtherapy.pl/"},"areaServed":[{"@type":"City","name":"Bydgoszcz"},{"@type":"AdministrativeArea","name":"Wyżyny"},{"@type":"AdministrativeArea","name":"Fordon"},{"@type":"AdministrativeArea","name":"Szwederowo"},{"@type":"City","name":"Osielsko"},{"@type":"City","name":"Białe Błota"},{"@type":"City","name":"Solec Kujawski"}],"offers":{"@type":"Offer","priceCurrency":"PLN","price":"200","priceDetermination":"PerSession","availability":"https://www.znanylekarz.pl/z/pwtJ8i"},"image":"https://mtherapy.pl/images/optimized/oferta-ortopedia.jpg","url":"https://mtherapy.pl/fizjoterapia-ortopedyczna-bydgoszcz/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Fizjoterapia Stomatologiczna","description":"Specjalistyczna fizjoterapia stomatologiczna w Bydgoszczy - kompleksowe leczenie dysfunkcji stawów skroniowo-żuchwowych, bólu głowy, bruksizmu.","provider":{"@type":"LocalBusiness","@id":"https://mtherapy.pl/"},"areaServed":[{"@type":"City","name":"Bydgoszcz"},{"@type":"AdministrativeArea","name":"Wyżyny"},{"@type":"AdministrativeArea","name":"Fordon"},{"@type":"AdministrativeArea","name":"Szwederowo"},{"@type":"City","name":"Osielsko"},{"@type":"City","name":"Białe Błota"},{"@type":"City","name":"Solec Kujawski"}],"offers":{"@type":"Offer","priceCurrency":"PLN","price":"200","priceDetermination":"PerSession","availability":"https://www.znanylekarz.pl/z/pwtJ8i"},"image":"https://mtherapy.pl/images/optimized/oferta-stomatologia.jpg","url":"https://mtherapy.pl/fizjoterapia-stomatologiczna-bydgoszcz/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Trening Medyczny","description":"Indywidualny program ćwiczeń specyficznych dla dysfunkcji ruchowych, poprzedzony wizytą fizjoterapeutyczną.","provider":{"@type":"LocalBusiness","@id":"https://mtherapy.pl/"},"areaServed":[{"@type":"City","name":"Bydgoszcz"},{"@type":"AdministrativeArea","name":"Wyżyny"},{"@type":"AdministrativeArea","name":"Fordon"},{"@type":"City","name":"Osielsko"},{"@type":"City","name":"Białe Błota"}],"offers":{"@type":"Offer","priceCurrency":"PLN","price":"150","priceDetermination":"PerSession","availability":"https://www.znanylekarz.pl/z/pwtJ8i"},"image":"https://mtherapy.pl/images/optimized/oferta-trening.jpg"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Masaż Leczniczy","description":"Masaż leczniczy w M.Therapy to techniki manualne redukujące napięcie mięśniowe, poprawiające krążenie krwi i zmniejszające ból.","provider":{"@type":"LocalBusiness","@id":"https://mtherapy.pl/"},"areaServed":[{"@type":"City","name":"Bydgoszcz"},{"@type":"AdministrativeArea","name":"Wyżyny"},{"@type":"AdministrativeArea","name":"Fordon"},{"@type":"City","name":"Osielsko"},{"@type":"City","name":"Białe Błota"}],"offers":{"@type":"Offer","priceCurrency":"PLN","price":"200","priceDetermination":"PerSession","availability":"https://www.znanylekarz.pl/z/pwtJ8i"},"image":"https://mtherapy.pl/images/optimized/oferta-masaz.jpg"}
+</script>
 </head>
 
 <body>
@@ -55,7 +69,7 @@
 
 <div class="upper-header" role="complementary" aria-label="Informacje kontaktowe">
 <div class="upper-header-content">
-<div>📍 M.Therapy, ul. Bohaterów Kragujewca 2, Bydgoszcz</div>
+<a href="https://maps.google.com/?q=M.Therapy+Fizjoterapia+Monika+Frontczak+ul.+Bohaterow+Kragujewca+2+Bydgoszcz" target="_blank" rel="noopener noreferrer" aria-label="Otwórz w Google Maps">📍 M.Therapy, ul. Bohaterów Kragujewca 2, Bydgoszcz</a>
 <div>📞 <a href="tel:+48693244517">+48 693 244 517</a></div>
 </div>
 </div>
@@ -63,7 +77,7 @@
 
 <header>
 <div class="inside-header">
-<a class="logo" href="#home" aria-label="M.Therapy">
+<a class="logo" href="/" aria-label="M.Therapy">
 <img src="images/logo.svg" alt="M.Therapy – gabinet fizjoterapii w Bydgoszczy" decoding="async" width="160" height="60">
 </a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
@@ -94,7 +108,6 @@
 </div>
 </header>
 
-
 <main id="main-content">
 <section id="home" class="home" aria-labelledby="home-title">
 <div class="hero">
@@ -106,7 +119,7 @@
 <p>Pomagam wrócić do sprawności po urazach, przeciążeniach i operacjach oraz w dolegliwościach stawów skroniowo‑żuchwowych.</p>
 <div class="cta">
 <a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=hero" target="_blank" rel="noopener noreferrer" data-track="booking">Umów wizytę online</a>
-<a class="btn btn-ghost" href="tel:+48693244517">Zadzwoń: +48 693 244 517</a>
+<a class="btn btn-ghost" href="tel:+48693244517" data-track="phone_call">Zadzwoń: +48 693 244 517</a>
 </div>
 </div>
 </div>
@@ -157,25 +170,20 @@
 
 <section class="testimonials">
       <div class="opinions">
-          <div class="row">
-              <div class="col-lg-12 text-center">
-                  <div class="section-title">
+          <div class="section-title">
                       <span>Jak mnie oceniają?</span>
                       <h2>Opinie pacjentów</h2>
-                      <p class="reviews-summary"><strong>5,0/5 na podstawie 151 opinii w ZnanyLekarz</strong><a href="https://www.znanylekarz.pl/monika-frontczak/fizjoterapeuta/bydgoszcz" target="_blank" rel="noopener noreferrer">Zobacz wszystkie opinie</a></p>
-                  </div>
-              </div>
+                      <p class="reviews-summary"><strong>5,0/5 na podstawie <span class="js-review-count">160</span> opinii w ZnanyLekarz</strong><a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=reviews" target="_blank" rel="noopener noreferrer">Zobacz wszystkie opinie</a></p>
           </div>
-          <div class="row">
-              <div class="testimonial__slider owl-carousel" itemscope itemtype="https://schema.org/AggregateRating">
+          <div class="testimonial__slider" itemscope itemtype="https://schema.org/AggregateRating">
                   <meta itemprop="ratingValue" content="5">
                   <meta itemprop="bestRating" content="5">
                   <meta itemprop="worstRating" content="1">
-                  <meta itemprop="ratingCount" content="151">
+                  <meta itemprop="ratingCount" content="160"><!-- sync z REVIEW_COUNT w script.js -->
                   <div class="testimonial__item" itemscope itemtype="https://schema.org/Review">
                       <div class="testimonial__author">
                           <div class="testimonial__author__icon"> 👩‍⚕️
-                              <i class="fa fa-user-circle"></i>
+
                           </div>
                           <div class="testimonial__author__text">
                               <h5 itemprop="author">Barbara</h5>
@@ -193,7 +201,7 @@
                   <div class="testimonial__item" itemscope itemtype="https://schema.org/Review">
                       <div class="testimonial__author">
                           <div class="testimonial__author__icon"> 👩‍🎤
-                              <i class="fa fa-user-circle"></i>
+
                           </div>
                           <div class="testimonial__author__text">
                               <h5 itemprop="author">Joanna</h5>
@@ -211,7 +219,7 @@
                   <div class="testimonial__item" itemscope itemtype="https://schema.org/Review">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🧑‍💼
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5 itemprop="author">P.Ch</h5>
@@ -229,7 +237,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🤵‍♂️
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Michał</h5>
@@ -242,7 +250,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 👩‍🏫
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Małgorzata</h5>
@@ -255,7 +263,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 👩‍🌾
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Anna</h5>
@@ -268,7 +276,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon">👰‍♂️
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Jarek</h5>
@@ -281,7 +289,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🚵‍♀️
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Jacek</h5>
@@ -294,7 +302,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🚵‍♀️
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Zuzanna</h5>
@@ -307,7 +315,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🧜‍♀️
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Krysia</h5>
@@ -320,7 +328,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🙋‍♀️
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Maciek</h5>
@@ -333,7 +341,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🙋
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Robert</h5>
@@ -346,7 +354,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🙋🏼
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Iwona</h5>
@@ -359,7 +367,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 🙋🏼‍♀️
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Kriss</h5>
@@ -372,7 +380,7 @@
                   <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__icon"> 👩‍💻
-                                <i class="fa fa-user-circle"></i>
+
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Agnieszka</h5>
@@ -385,7 +393,7 @@
                   <div class="testimonial__item">
                       <div class="testimonial__author">
                           <div class="testimonial__author__icon"> 🙋🏻
-                              <i class="fa fa-user-circle"></i>
+
                           </div>
                           <div class="testimonial__author__text">
                               <h5>Magda</h5>
@@ -395,7 +403,6 @@
                       <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
                       <p class="equal-1">Bardzo profesjonalne i przyjazne podejście do pacjenta. Pani Monika zwraca również uwagę na próg bólu pacjenta, co uważam za ogromny plus. Z pewnością jeszcze wrócę, dziękuję bardzo!</p>
                   </div>
-              </div>
           </div>
           <div class="testimonial-controls" aria-label="Nawigacja opinii">
               <button class="testimonial-nav-btn" type="button" data-direction="prev" aria-label="Poprzednia opinia">
@@ -429,14 +436,14 @@
 
 
 <div class="gallery-container">
-<div class="gallery owl-carousel">
+<div class="gallery">
 <div class="gallery-item"><img src="images/optimized/certyfikat-1.jpg" srcset="images/optimized/mobile/certyfikat-1.jpg 640w, images/optimized/certyfikat-1.jpg 850w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat masażu tkanek głębokich" loading="lazy" decoding="async" width="850" height="1200"> </div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-2.jpg" srcset="images/optimized/mobile/certyfikat-2.jpg 640w, images/optimized/certyfikat-2.jpg 850w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii manualnej" loading="lazy" decoding="async" width="850" height="1200"></div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-3.jpg" srcset="images/optimized/mobile/certyfikat-3.jpg 640w, images/optimized/medium/certyfikat-3.jpg 960w, images/optimized/certyfikat-3.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat igłoterapii suchej" loading="lazy" decoding="async" width="1200" height="852"></div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-4.jpg" srcset="images/optimized/mobile/certyfikat-4.jpg 640w, images/optimized/medium/certyfikat-4.jpg 960w, images/optimized/certyfikat-4.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat kinesiotapingu" loading="lazy" decoding="async" width="1200" height="847"></div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-5.jpg" srcset="images/optimized/mobile/certyfikat-5.jpg 640w, images/optimized/medium/certyfikat-5.jpg 960w, images/optimized/certyfikat-5.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii punktów spustowych" loading="lazy" decoding="async" width="1200" height="770"></div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-6.jpg" srcset="images/optimized/mobile/certyfikat-6.jpg 640w, images/optimized/certyfikat-6.jpg 842w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii blizny" loading="lazy" decoding="async" width="842" height="1200"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-7.jpg" srcset="images/optimized/mobile/certyfikat-7.jpg 640w, images/optimized/certyfikat-7.jpg 847w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat Ccat" loading="lazy" decoding="async" width="847" height="1200"> </div>
+<div class="gallery-item"><img src="images/optimized/certyfikat-7.jpg" srcset="images/optimized/mobile/certyfikat-7.jpg 640w, images/optimized/certyfikat-7.jpg 847w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii manualnej CCAT" loading="lazy" decoding="async" width="847" height="1200"> </div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-8.jpg" srcset="images/optimized/mobile/certyfikat-8.jpg 640w, images/optimized/medium/certyfikat-8.jpg 960w, images/optimized/certyfikat-8.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii bruksizmu" loading="lazy" decoding="async" width="1200" height="854"></div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-9.jpg" srcset="images/optimized/mobile/certyfikat-9.jpg 640w, images/optimized/medium/certyfikat-9.jpg 960w, images/optimized/certyfikat-9.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat neurokręgosłupa" loading="lazy" decoding="async" width="1200" height="848"></div>
 <div class="gallery-item"><img src="images/optimized/certyfikat-10.jpg" srcset="images/optimized/mobile/certyfikat-10.jpg 640w, images/optimized/certyfikat-10.jpg 848w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat radiologii" loading="lazy" decoding="async" width="848" height="1200"></div>
@@ -651,7 +658,7 @@
 <div class="pricing-meta">
 <span class="duration">⏱️ 45–55 min</span>
 </div>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=pricelist" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; margin-top: auto;" data-track="booking">Umów Wizytę</a>
 </div>
 
 <!-- Standard -->
@@ -665,7 +672,7 @@
 <div class="pricing-meta">
 <span class="duration">⏱️ 45–55 min</span>
 </div>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=pricelist" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;" data-track="booking">Umów Wizytę</a>
 </div>
 
 <!-- Economy -->
@@ -679,7 +686,7 @@
 <div class="pricing-meta">
 <span class="duration">⏱️ 45–60 min</span>
 </div>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=pricelist" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;" data-track="booking">Umów Wizytę</a>
 </div>
 
 <!-- Extended -->
@@ -693,7 +700,7 @@
 <div class="pricing-meta">
 <span class="duration">⏱️ 60 min</span>
 </div>
-<a href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;">Umów Wizytę</a>
+<a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=pricelist" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="width:100%; margin-top: auto;" data-track="booking">Umów Wizytę</a>
 </div>
 
 <!-- Add-on -->
@@ -707,7 +714,7 @@
 <div class="pricing-meta">
 <span class="duration">⏱️ Do umówienia</span>
 </div>
-<a href="tel:+48693244517" class="btn btn-ghost" style="width:100%; margin-top:auto;">Zapytaj o kinesiotaping</a>
+<a href="tel:+48693244517" class="btn btn-ghost" style="width:100%; margin-top:auto;" data-track="phone_call">Zapytaj o kinesiotaping</a>
 </div>
 </div>
 
@@ -727,7 +734,7 @@
 <div class="zl-widget" aria-label="Rezerwacja wizyty">
   <p class="zl-placeholder">Wybierz dogodny termin w aktualnym kalendarzu ZnanyLekarz. Rezerwacja jest bezpłatna i potwierdzana online.</p>
 </div>
-<a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i" target="_blank" rel="noopener noreferrer">Umów wizytę online</a>
+<a class="btn btn-primary" href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=booking_section" target="_blank" rel="noopener noreferrer">Umów wizytę online</a>
 </div>
 
 <div class="booking-side">
@@ -808,7 +815,7 @@ Nie wykonujemy zabiegów refundowanych przez NFZ.
 <div class="contact-card">
 <h3>Umów Wizytę</h3>
 <address class="contact-list">
-<ul style="list-style: none;">
+<ul>
 <li><strong>Telefon:</strong> <a href="tel:+48693244517">+48 693 244 517</a></li>
 <li><strong>Mail:</strong> <a href="mailto:frontczak.monika.fizjo@gmail.com">frontczak.monika.fizjo@gmail.com</a></li>
 <li><strong>Adres:</strong> M.Therapy, Ul. Bohaterów Kragujewca 2, 85-863 Bydgoszcz</li>
@@ -832,7 +839,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
 
 </main>
 <div class="mobile-action-bar" aria-label="Szybki kontakt">
-<a class="mobile-action-bar__call" href="tel:+48693244517">Zadzwoń</a>
+<a class="mobile-action-bar__call" href="tel:+48693244517" data-track="phone_call">Zadzwoń</a>
 <a class="mobile-action-bar__book" href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=mobile_bar" target="_blank" rel="noopener noreferrer" data-track="booking">Umów online</a>
 </div>
 <footer class="site-footer">
@@ -856,7 +863,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
 <div class="footer-contact">
 <h3>Kontakt</h3>
 <address>
-<ul style="list-style: none;">
+<ul>
 <li><a href="tel:+48693244517">+48 693 244 517</a></li>
 <li><a href="mailto:frontczak.monika.fizjo@gmail.com">frontczak.monika.fizjo@gmail.com</a></li>
 <li>M.Therapy, Ul. Bohaterów Kragujewca 2, 85-863 Bydgoszcz</li>
@@ -945,10 +952,26 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Masaż leczniczy"}}
     ]
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Bydgoszcz"
-  }
+  "areaServed": [
+    {"@type": "City", "name": "Bydgoszcz"},
+    {"@type": "AdministrativeArea", "name": "Wyżyny"},
+    {"@type": "AdministrativeArea", "name": "Fordon"},
+    {"@type": "AdministrativeArea", "name": "Szwederowo"},
+    {"@type": "AdministrativeArea", "name": "Śródmieście"},
+    {"@type": "AdministrativeArea", "name": "Bartodzieje"},
+    {"@type": "AdministrativeArea", "name": "Kapuściska"},
+    {"@type": "AdministrativeArea", "name": "Błonie"},
+    {"@type": "AdministrativeArea", "name": "Czyżkówko"},
+    {"@type": "AdministrativeArea", "name": "Okole"},
+    {"@type": "AdministrativeArea", "name": "Glinki"},
+    {"@type": "AdministrativeArea", "name": "Leśne"},
+    {"@type": "AdministrativeArea", "name": "Białe Błota (osiedle Bydgoszcz)"},
+    {"@type": "City", "name": "Osielsko"},
+    {"@type": "City", "name": "Białe Błota"},
+    {"@type": "City", "name": "Solec Kujawski"},
+    {"@type": "City", "name": "Nowa Wieś Wielka"},
+    {"@type": "City", "name": "Koronowo"}
+  ]
 }
 </script>
 
@@ -1089,7 +1112,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
   ]
 }
 </script>
-<script src="script.js" defer></script>
+<script src="script.min.js" defer></script>
 
 </body>
 </html>
