@@ -754,13 +754,7 @@ border-radius: var(--radius-m); padding: var(--sp-5); box-shadow: var(--shadow-s
   .contact-grid{ gap:var(--sp-2); }
   .contact-card,.map-card{ padding:var(--sp-3); }
   header{ padding:var(--sp-2) var(--sp-2); }
-  .inside-header{ flex-direction:column; align-items:flex-start; gap:10px; width:100%; }
   .logo img{ width:120px; }
-  .main-list{ width:100%; min-width:0; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
-  .main-list ul{ display:grid; grid-template-columns:1fr 0.95fr 1fr 1.3fr 1fr; gap:2px; width:100%; min-width:0; }
-  .main-list li{ min-width:0; }
-  .main-list li a{ display:flex; align-items:center; justify-content:center; padding:8px 4px; font-size:clamp(10px, 2.5vw, 12px); line-height:1.2; white-space:nowrap; }
-  .appointmentwithme{ padding:5px 3px; border-width:1px; }
   #aboutme{ padding:40px 0; }
   .aboutme-page{ width:calc(100% - 32px); margin:0 16px; padding:14px; }
   .aboutme-content,.aboutme-page img{ flex-basis:100%; min-width:0; }
