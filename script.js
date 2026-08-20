@@ -76,6 +76,7 @@ if (!isOpen) {
   window.gtag?.('event', 'faq_open', { question: button.textContent.trim().substring(0, 60) });
 }
 });
+});
 
 document.querySelectorAll('[data-track]').forEach((link) => {
 link.addEventListener('click', () => {
@@ -87,7 +88,6 @@ window.gtag?.('event', 'generate_lead', {
   lead_source: trackType,
   lead_campaign: campaign,
   link_url: link.href
-});
 });
 });
 });

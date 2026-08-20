@@ -2,6 +2,7 @@
   "name": "mtherapy-website",
   "private": true,
   "scripts": {
+    "sync:subpages": "node scripts/sync-subpage-partials.js",
     "build:css": "cleancss style.css -o style.min.css",
     "build:js": "terser script.js -o script.min.js --compress --mangle",
     "build": "npm run build:css && npm run build:js"
