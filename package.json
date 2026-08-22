@@ -3,12 +3,14 @@
   "private": true,
   "scripts": {
     "sync:subpages": "node scripts/sync-subpage-partials.js",
+    "build:images": "node scripts/generate-modern-images.js",
     "build:css": "cleancss style.css -o style.min.css",
     "build:js": "terser script.js -o script.min.js --compress --mangle",
     "build": "npm run build:css && npm run build:js"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
+    "sharp": "^0.35.3",
     "terser": "^5.50.0"
   }
 }

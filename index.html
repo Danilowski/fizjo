@@ -1,14 +1,19 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/62b9bbbc82d34.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
+<script async type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/62b9bbbc82d34.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z06G21FE2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9Z06G21FE2');
+  window.addEventListener('load', function() {
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9Z06G21FE2';
+    document.head.appendChild(gtagScript);
+    gtag('js', new Date());
+    gtag('config', 'G-9Z06G21FE2');
+  }, { once: true });
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,13 +31,10 @@
 <link rel="canonical" href="https://mtherapy.pl/">
 <link rel="alternate" hreflang="pl" href="https://mtherapy.pl/">
 <link rel="alternate" hreflang="x-default" href="https://mtherapy.pl/">
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="style.min.css" as="style">
-<link rel="preload" as="image" href="images/optimized/medium/gabinet.jpg" media="(min-width:701px)" fetchpriority="high">
-<link rel="preload" as="image" href="images/optimized/mobile/gabinet.jpg" media="(max-width:700px)" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.min.css">
+<link rel="preload" href="style.min.css?v=20260822" as="style">
+<link rel="preload" as="image" href="images/optimized/gabinet.jpg" imagesrcset="images/optimized/mobile/gabinet.jpg 640w, images/optimized/medium/gabinet.jpg 960w, images/optimized/gabinet.jpg 1600w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
+<link rel="stylesheet" href="style.min.css?v=20260822" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="style.min.css?v=20260822"></noscript>
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
@@ -173,256 +175,9 @@
           <div class="section-title">
                       <span>Jak mnie oceniają?</span>
                       <h2>Opinie pacjentów</h2>
-                      <p class="reviews-summary"><strong>5,0/5 na podstawie <span class="js-review-count">160</span> opinii w ZnanyLekarz</strong><a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=reviews" target="_blank" rel="noopener noreferrer">Zobacz wszystkie opinie</a></p>
+                      <p class="reviews-summary"><strong>5,0/5 na podstawie <span class="js-review-count">0</span> opinii w ZnanyLekarz</strong><a href="https://www.znanylekarz.pl/z/pwtJ8i?utm_source=mtherapy.pl&utm_medium=website&utm_campaign=reviews" target="_blank" rel="noopener noreferrer">Zobacz wszystkie opinie</a></p>
           </div>
-            <div class="testimonial__slider" itemscope itemtype="https://schema.org/AggregateRating">
-              <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
-                  <meta itemprop="name" content="M.Therapy">
-                  <meta itemprop="url" content="https://mtherapy.pl/">
-              </div>
-                  <meta itemprop="ratingValue" content="5">
-                  <meta itemprop="bestRating" content="5">
-                  <meta itemprop="worstRating" content="1">
-                  <meta itemprop="ratingCount" content="160"><!-- sync z REVIEW_COUNT w script.js -->
-                  <div class="testimonial__item" itemscope itemtype="https://schema.org/Review">
-                      <div class="testimonial__author">
-                          <div class="testimonial__author__icon"> 👩‍⚕️
-
-                          </div>
-                            <div class="testimonial__author__text">
-                              <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                <h5 itemprop="name">Barbara</h5>
-                              </div>
-                              <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                  <meta itemprop="ratingValue" content="5">
-                                  zdecydowanie poleca
-                              </span>
-                              <meta itemprop="datePublished" content="2026-06-15">
-                          </div>
-                      </div>
-                      <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                      <p class="equal-1" itemprop="reviewBody">Jestem po pierwszej wizycie u Pani Moniki. Przemiła osoba z profesjonalnym podejściem do pacjenta. Czekam na efekty naszej dalszej współpracy. Polecam z całego serca.</p>
-                        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
-                          <meta itemprop="name" content="M.Therapy">
-                          <meta itemprop="url" content="https://mtherapy.pl/">
-                        </div>
-                  </div>
-                  <div class="testimonial__item" itemscope itemtype="https://schema.org/Review">
-                      <div class="testimonial__author">
-                          <div class="testimonial__author__icon"> 👩‍🎤
-
-                          </div>
-                            <div class="testimonial__author__text">
-                              <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                <h5 itemprop="name">Joanna</h5>
-                              </div>
-                              <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                  <meta itemprop="ratingValue" content="5">
-                                  zdecydowanie poleca
-                              </span>
-                              <meta itemprop="datePublished" content="2026-05-20">
-                          </div>
-                      </div>
-                      <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                      <p class="equal-1" itemprop="reviewBody">Bardzo profesjonalne podejście do pacjenta, szczegółowe wyjaśnienia każdego ćwiczenia i bardzo szybkie zniwelowanie dolegliwości bólowych u nastolatki z uszkodzeniem kręgosłupa pozwalają mi na stwierdzenie, że Pani Monika jest znakomitą, godną polecenia fizjoterapeutką.</p>
-                        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
-                          <meta itemprop="name" content="M.Therapy">
-                          <meta itemprop="url" content="https://mtherapy.pl/">
-                        </div>
-                  </div>
-                  <div class="testimonial__item" itemscope itemtype="https://schema.org/Review">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🧑‍💼
-
-                            </div>
-                            <div class="testimonial__author__text">
-                              <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                <h5 itemprop="name">P.Ch</h5>
-                              </div>
-                                <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                    <meta itemprop="ratingValue" content="5">
-                                    zdecydowanie poleca
-                                </span>
-                                <meta itemprop="datePublished" content="2026-06-10">
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1" itemprop="reviewBody">Wizyta bardzo udana, polecam serdecznie! Po pierwszej wizycie poczułam się o wiele lepiej... Pani Monika jest profesjonalistką w swojej dziedzinie i wie, co robi :)</p>
-                        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
-                          <meta itemprop="name" content="M.Therapy">
-                          <meta itemprop="url" content="https://mtherapy.pl/">
-                        </div>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🤵‍♂️
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Michał</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Bardzo dobra fizjoterapeutka, zna się na swoim fachu, godna zaufania. Bardzo miła Pani</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 👩‍🏫
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Małgorzata</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Atmosfera i profesjonalizm na najwyższym poziomie. Była to moja kolejna wizyta, ale już po pierwszej dzięki masażowi i ćwiczeniom czułam poprawę. Polecam Panią Monikę.</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 👩‍🌾
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Anna</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Do Pani Moniki uczęszczałam na fizjoterapię stomatologiczną. Zabiegi zawsze odbywały się w miłej atmosferze, uzyskałam odpowiedzi na wszystkie pytania. Serdecznie polecam</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon">👰‍♂️
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Jarek</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Profesjonalnie i z uśmiechem. Zdecydowanie polecam</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🚵‍♀️
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Jacek</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Jestem zadowolony z terapii szyi, karku. Przyjazna atmosfera. Polecam</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🚵‍♀️
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Zuzanna</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Mam problem z bólami karku. Już po pierwszej wizycie u pani Moniki zauważyłam odczuwalną różnicę, bardzo polecam, super podejście do pacjenta!</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🧜‍♀️
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Krysia</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Profesjonalna usługa, bardzo dobrze się czuję po terapii pleców. Pani Monika przekazuje bardzo dużo przydatnych informacji podczas wizyty. Bardzo polecam</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🙋‍♀️
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Maciek</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Od dawna mam problem z ruchomością barków, bólami szyi i głowy. Jestem w szoku, że już po pierwszej wizycie widzę sporą różnicę. Oprócz terapii w gabinecie dostałem też zalecenia do domu. Wszystko dokładnie wytłumaczone. W miłej atmosferze. Nie mogę się doczekać efektów kolejnych spotkań. Bardzo polecam</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🙋
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Robert</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Bardzo miła fizjoterapeutka z dużą wiedzą i dobrym podejściem do klienta, podczas wizyty wykonano masaż żuchwy, zalecono ćwiczenia do wykonywania w domu i omówiono złe nawyki. Polecam :)</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🙋🏼
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Iwona</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Pełen profesjonalizm, diagnoza oraz skuteczny zabieg. Miła atmosfera, duża empatia do pacjenta. Bardzo dziękuję i polecam z całego serca.</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 🙋🏼‍♀️
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Kriss</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Bardzo pomógł mi fachowy instruktaż odnośnie ćwiczeń. Okazało się, że ćwicząc samodzielnie, robiłem dużo błędów. Po korekcie, zacząłem odczuwać wyraźną poprawę.</p>
-                    </div>
-                  <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__icon"> 👩‍💻
-
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Agnieszka</h5>
-                                <span>zdecydowanie poleca</span>
-                            </div>
-                        </div>
-                        <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                        <p class="equal-1">Gdyby wizyty u innych specjalistów przebiegały tak miło i profesjonalnie jak u Moniki, to zdecydowanie chętniej chodziłabym się badać. Szczegółowy wywiad lekarski jak najbardziej na plus – Monika łączy wiele wątków na raz, wydając trafną diagnozę. Była to moja pierwsza wizyta u fizjoterapeuty i na pewno nie ostatnia w tym konkretnym gabinecie.</p>
-                    </div>
-                  <div class="testimonial__item">
-                      <div class="testimonial__author">
-                          <div class="testimonial__author__icon"> 🙋🏻
-
-                          </div>
-                          <div class="testimonial__author__text">
-                              <h5>Magda</h5>
-                              <span>zdecydowanie poleca</span>
-                          </div>
-                      </div>
-                      <div class="rating" aria-label="Ocena 5 na 5">★★★★★</div>
-                      <p class="equal-1">Bardzo profesjonalne i przyjazne podejście do pacjenta. Pani Monika zwraca również uwagę na próg bólu pacjenta, co uważam za ogromny plus. Z pewnością jeszcze wrócę, dziękuję bardzo!</p>
-                  </div>
-          </div>
+            <div class="testimonial__slider" itemscope itemtype="https://schema.org/AggregateRating" aria-live="polite" aria-label="Opinie pacjentów"></div>
           <div class="testimonial-controls" aria-label="Nawigacja opinii">
               <button class="testimonial-nav-btn" type="button" data-direction="prev" aria-label="Poprzednia opinia">
                   <span aria-hidden="true">←</span>
@@ -437,7 +192,11 @@
 <section id="aboutme" aria-labelledby="aboutme-title">
 <div class="aboutme-page">
 
-<img src="images/optimized/monika.jpg" srcset="images/optimized/mobile/monika.jpg 640w, images/optimized/monika.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Monika Frontczak – fizjoterapeutka w gabinecie M.Therapy" loading="lazy" decoding="async" width="960" height="1200">
+<picture>
+<source type="image/avif" srcset="images/optimized/mobile/monika.avif 640w, images/optimized/monika.avif 960w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 50vw, 420px">
+<source type="image/webp" srcset="images/optimized/mobile/monika.webp 640w, images/optimized/monika.webp 960w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 50vw, 420px">
+<img src="images/optimized/monika.jpg" srcset="images/optimized/mobile/monika.jpg 640w, images/optimized/monika.jpg 960w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 50vw, 420px" alt="Monika Frontczak – fizjoterapeutka w gabinecie M.Therapy" loading="lazy" decoding="async" width="960" height="1200">
+</picture>
 <div class="aboutme-content">
 <h3 class="aboutme-start" id="aboutme-title">O Mnie</h3>
 <p>Nazywam się <strong>Monika Frontczak</strong> i jestem fizjoterapeutką. Ukończyłam studia magisterskie na Collegium Medicum im. Ludwika Rydygiera w Bydgoszczy, UMK w Toruniu.</p>
@@ -456,20 +215,20 @@
 
 <div class="gallery-container">
 <div class="gallery">
-<div class="gallery-item"><img src="images/optimized/certyfikat-1.jpg" srcset="images/optimized/mobile/certyfikat-1.jpg 640w, images/optimized/certyfikat-1.jpg 850w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat masażu tkanek głębokich" loading="lazy" decoding="async" width="850" height="1200"> </div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-2.jpg" srcset="images/optimized/mobile/certyfikat-2.jpg 640w, images/optimized/certyfikat-2.jpg 850w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii manualnej" loading="lazy" decoding="async" width="850" height="1200"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-3.jpg" srcset="images/optimized/mobile/certyfikat-3.jpg 640w, images/optimized/medium/certyfikat-3.jpg 960w, images/optimized/certyfikat-3.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat igłoterapii suchej" loading="lazy" decoding="async" width="1200" height="852"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-4.jpg" srcset="images/optimized/mobile/certyfikat-4.jpg 640w, images/optimized/medium/certyfikat-4.jpg 960w, images/optimized/certyfikat-4.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat kinesiotapingu" loading="lazy" decoding="async" width="1200" height="847"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-5.jpg" srcset="images/optimized/mobile/certyfikat-5.jpg 640w, images/optimized/medium/certyfikat-5.jpg 960w, images/optimized/certyfikat-5.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii punktów spustowych" loading="lazy" decoding="async" width="1200" height="770"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-6.jpg" srcset="images/optimized/mobile/certyfikat-6.jpg 640w, images/optimized/certyfikat-6.jpg 842w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii blizny" loading="lazy" decoding="async" width="842" height="1200"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-7.jpg" srcset="images/optimized/mobile/certyfikat-7.jpg 640w, images/optimized/certyfikat-7.jpg 847w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii manualnej CCAT" loading="lazy" decoding="async" width="847" height="1200"> </div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-8.jpg" srcset="images/optimized/mobile/certyfikat-8.jpg 640w, images/optimized/medium/certyfikat-8.jpg 960w, images/optimized/certyfikat-8.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii bruksizmu" loading="lazy" decoding="async" width="1200" height="854"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-9.jpg" srcset="images/optimized/mobile/certyfikat-9.jpg 640w, images/optimized/medium/certyfikat-9.jpg 960w, images/optimized/certyfikat-9.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat neurokręgosłupa" loading="lazy" decoding="async" width="1200" height="848"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-10.jpg" srcset="images/optimized/mobile/certyfikat-10.jpg 640w, images/optimized/certyfikat-10.jpg 848w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat radiologii" loading="lazy" decoding="async" width="848" height="1200"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-11.jpg" srcset="images/optimized/mobile/certyfikat-11.jpg 640w, images/optimized/certyfikat-11.jpg 840w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii stawu kolanowego" loading="lazy" decoding="async" width="840" height="1200"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-12.jpg" srcset="images/optimized/mobile/certyfikat-12.jpg 640w, images/optimized/certyfikat-12.jpg 850w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii stawu skokowego" loading="lazy" decoding="async" width="850" height="1200"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-13.jpg" srcset="images/optimized/mobile/certyfikat-13.jpg 640w, images/optimized/certyfikat-13.jpg 850w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat terapii stawu skroniowo-żuchwowego" loading="lazy" decoding="async" width="850" height="1200"></div>
-<div class="gallery-item"><img src="images/optimized/certyfikat-14.jpg" srcset="images/optimized/mobile/certyfikat-14.jpg 640w, images/optimized/medium/certyfikat-14.jpg 960w, images/optimized/certyfikat-14.jpg 1200w" sizes="(max-width: 700px) 100vw, 960px" alt="Certyfikat fizjoterapii stomatologicznej" loading="lazy" decoding="async" width="1200" height="857"></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-1.avif 640w, images/optimized/certyfikat-1.avif 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-1.webp 640w, images/optimized/certyfikat-1.webp 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-1.jpg" srcset="images/optimized/mobile/certyfikat-1.jpg 640w, images/optimized/certyfikat-1.jpg 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat masażu tkanek głębokich" loading="lazy" decoding="async" width="850" height="1200"></picture> </div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-2.avif 640w, images/optimized/certyfikat-2.avif 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-2.webp 640w, images/optimized/certyfikat-2.webp 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-2.jpg" srcset="images/optimized/mobile/certyfikat-2.jpg 640w, images/optimized/certyfikat-2.jpg 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii manualnej" loading="lazy" decoding="async" width="850" height="1200"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-3.avif 640w, images/optimized/medium/certyfikat-3.avif 960w, images/optimized/certyfikat-3.avif 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-3.webp 640w, images/optimized/medium/certyfikat-3.webp 960w, images/optimized/certyfikat-3.webp 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-3.jpg" srcset="images/optimized/mobile/certyfikat-3.jpg 640w, images/optimized/medium/certyfikat-3.jpg 960w, images/optimized/certyfikat-3.jpg 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat igłoterapii suchej" loading="lazy" decoding="async" width="1200" height="852"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-4.avif 640w, images/optimized/medium/certyfikat-4.avif 960w, images/optimized/certyfikat-4.avif 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-4.webp 640w, images/optimized/medium/certyfikat-4.webp 960w, images/optimized/certyfikat-4.webp 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-4.jpg" srcset="images/optimized/mobile/certyfikat-4.jpg 640w, images/optimized/medium/certyfikat-4.jpg 960w, images/optimized/certyfikat-4.jpg 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat kinesiotapingu" loading="lazy" decoding="async" width="1200" height="847"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-5.avif 640w, images/optimized/medium/certyfikat-5.avif 960w, images/optimized/certyfikat-5.avif 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-5.webp 640w, images/optimized/medium/certyfikat-5.webp 960w, images/optimized/certyfikat-5.webp 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-5.jpg" srcset="images/optimized/mobile/certyfikat-5.jpg 640w, images/optimized/medium/certyfikat-5.jpg 960w, images/optimized/certyfikat-5.jpg 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii punktów spustowych" loading="lazy" decoding="async" width="1200" height="770"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-6.avif 640w, images/optimized/certyfikat-6.avif 842w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-6.webp 640w, images/optimized/certyfikat-6.webp 842w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-6.jpg" srcset="images/optimized/mobile/certyfikat-6.jpg 640w, images/optimized/certyfikat-6.jpg 842w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii blizny" loading="lazy" decoding="async" width="842" height="1200"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-7.avif 640w, images/optimized/certyfikat-7.avif 847w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-7.webp 640w, images/optimized/certyfikat-7.webp 847w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-7.jpg" srcset="images/optimized/mobile/certyfikat-7.jpg 640w, images/optimized/certyfikat-7.jpg 847w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii manualnej CCAT" loading="lazy" decoding="async" width="847" height="1200"></picture> </div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-8.avif 640w, images/optimized/medium/certyfikat-8.avif 960w, images/optimized/certyfikat-8.avif 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-8.webp 640w, images/optimized/medium/certyfikat-8.webp 960w, images/optimized/certyfikat-8.webp 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-8.jpg" srcset="images/optimized/mobile/certyfikat-8.jpg 640w, images/optimized/medium/certyfikat-8.jpg 960w, images/optimized/certyfikat-8.jpg 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii bruksizmu" loading="lazy" decoding="async" width="1200" height="854"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-9.avif 640w, images/optimized/medium/certyfikat-9.avif 960w, images/optimized/certyfikat-9.avif 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-9.webp 640w, images/optimized/medium/certyfikat-9.webp 960w, images/optimized/certyfikat-9.webp 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-9.jpg" srcset="images/optimized/mobile/certyfikat-9.jpg 640w, images/optimized/medium/certyfikat-9.jpg 960w, images/optimized/certyfikat-9.jpg 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat neurokręgosłupa" loading="lazy" decoding="async" width="1200" height="848"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-10.avif 640w, images/optimized/certyfikat-10.avif 848w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-10.webp 640w, images/optimized/certyfikat-10.webp 848w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-10.jpg" srcset="images/optimized/mobile/certyfikat-10.jpg 640w, images/optimized/certyfikat-10.jpg 848w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat radiologii" loading="lazy" decoding="async" width="848" height="1200"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-11.avif 640w, images/optimized/certyfikat-11.avif 840w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-11.webp 640w, images/optimized/certyfikat-11.webp 840w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-11.jpg" srcset="images/optimized/mobile/certyfikat-11.jpg 640w, images/optimized/certyfikat-11.jpg 840w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii stawu kolanowego" loading="lazy" decoding="async" width="840" height="1200"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-12.avif 640w, images/optimized/certyfikat-12.avif 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-12.webp 640w, images/optimized/certyfikat-12.webp 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-12.jpg" srcset="images/optimized/mobile/certyfikat-12.jpg 640w, images/optimized/certyfikat-12.jpg 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii stawu skokowego" loading="lazy" decoding="async" width="850" height="1200"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-13.avif 640w, images/optimized/certyfikat-13.avif 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-13.webp 640w, images/optimized/certyfikat-13.webp 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-13.jpg" srcset="images/optimized/mobile/certyfikat-13.jpg 640w, images/optimized/certyfikat-13.jpg 850w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat terapii stawu skroniowo-żuchwowego" loading="lazy" decoding="async" width="850" height="1200"></picture></div>
+<div class="gallery-item"><picture><source type="image/avif" srcset="images/optimized/mobile/certyfikat-14.avif 640w, images/optimized/medium/certyfikat-14.avif 960w, images/optimized/certyfikat-14.avif 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><source type="image/webp" srcset="images/optimized/mobile/certyfikat-14.webp 640w, images/optimized/medium/certyfikat-14.webp 960w, images/optimized/certyfikat-14.webp 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px"><img src="images/optimized/certyfikat-14.jpg" srcset="images/optimized/mobile/certyfikat-14.jpg 640w, images/optimized/medium/certyfikat-14.jpg 960w, images/optimized/certyfikat-14.jpg 1200w" sizes="(max-width: 700px) 88vw, (max-width: 1200px) 42vw, 277px" alt="Certyfikat fizjoterapii stomatologicznej" loading="lazy" decoding="async" width="1200" height="857"></picture></div>
 
 </div>
 </div>
@@ -628,27 +387,27 @@
 
 <div class="help-grid">
 <div class="help-card">
-<h4>Problemy Bólowe</h4>
+<h3>Problemy Bólowe</h3>
 <p>Bóle kręgosłupa oraz stawów obwodowych, np. bioder, kolan, barków, nadgarstków, napięciowe bóle głowy.</p>
 </div>
 <div class="help-card">
-<h4>Stan Po Urazie/Kontuzji</h4>
+<h3>Stan Po Urazie/Kontuzji</h3>
 <p>Skręcenie kostki, naderwanie mięśni, naciągnięcie więzadeł, stan po wypadku komunikacyjnym, po złamaniu lub pęknięciu kości.</p>
 </div>
 <div class="help-card">
-<h4>Dysfunkcje Twarzoczaszki</h4>
+<h3>Dysfunkcje Twarzoczaszki</h3>
 <p>Przeskakiwanie w okolicy stawów skroniowo‑żuchwowych, bruksizm, zgrzytanie zębami, bóle głowy, karku, twarzy, ograniczenie otwierania ust, ból podczas żucia twardych pokarmów, szumy uszne, uczucie zatkania ucha, porażenie nerwu twarzowego.</p>
 </div>
 <div class="help-card">
-<h4>Stan Po Operacji</h4>
+<h3>Stan Po Operacji</h3>
 <p>Endoprotezoplastyka stawu, operacje kręgosłupa, artroskopia stawu kolanowego, rekonstrukcja więzadeł krzyżowych, leczenie zespołu cieśni nadgarstka, operacje barku, stan po zespoleniu złamania.</p>
 </div>
 <div class="help-card">
-<h4>Zaburzenia Narządu Ruchu</h4>
+<h3>Zaburzenia Narządu Ruchu</h3>
 <p>Ograniczenie ruchomości stawów, osłabienie siły mięśniowej, drętwienie, mrowienie rąk/nóg, zaburzenia równowagi i koordynacji.</p>
 </div>
 <div class="help-card">
-<h4 class="help-card__title--stomatology"><span>Stomatologia/</span><span>Ortodoncja</span></h4>
+<h3 class="help-card__title--stomatology"><span>Stomatologia/</span><span>Ortodoncja</span></h3>
 <p>Powikłania po zabiegach stomatologicznych, po ekstrakcjach zębów, problem z adaptacją po implantach, dyskomfort podczas szynoterapii, kompleksowe wsparcie fizjoterapeutyczne podczas procesu ortodoncji.</p>
 </div>
 </div>
@@ -848,8 +607,7 @@ Nie wykonujemy zabiegów refundowanych przez NFZ.
 
 <div class="map-card">
 <div class="map-embed">
-<iframe title="Mapa dojazdu do gabinetu M.Therapy w Bydgoszczy" data-cmp-no-auto="true" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d18.0300744!3d53.105619499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ccd2da3f72f2d69%3A0x7a9ef00ea9429078!2sM.Therapy%20Fizjoterapia%20Monika%20Frontczak!5e0!3m2!1spl!2spl!4v1784547072842!5m2!1spl!2spl"></iframe>
+<iframe title="Mapa dojazdu do gabinetu M.Therapy w Bydgoszczy" data-cmp-no-auto="true" loading="lazy" decoding="async" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" src="about:blank" data-lazy-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d18.0300744!3d53.105619499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ccd2da3f72f2d69%3A0x7a9ef00ea9429078!2sM.Therapy%20Fizjoterapia%20Monika%20Frontczak!5e0!3m2!1spl!2spl!4v1784547072842!5m2!1spl!2spl"></iframe>
 </div>
 </div>
 </div>
@@ -1131,7 +889,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2395.254673584539!2d1
   ]
 }
 </script>
-<script src="script.min.js" defer></script>
+<script src="script.min.js?v=20260822" defer></script>
 
 </body>
 </html>
