@@ -35,6 +35,7 @@ unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+
 }
 
 :root{
+font-size-adjust:0.52;
 --navy-900:#1f2a44;
 --navy-800:#26345a;
 --blue-600:#2f7fc0;
@@ -85,8 +86,9 @@ unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+
 }
 
 *{ box-sizing:border-box; }
-html{ height:100%; margin:0; padding:0; scroll-behavior:smooth; overflow-x:hidden; }
+html{ height:100%; margin:0; padding:0; scroll-behavior:smooth; scroll-padding-top:96px; overflow-x:hidden; }
 body{ min-height:100%; width:100%; max-width:100%; margin:0; padding:0; font-family:var(--font-sans); color:var(--text-900); background:var(--page-bg); line-height:1.6; overflow-x:hidden; }
+section[id], [id]{ scroll-margin-top:96px; }
 img{ max-width:100%; height:auto; display:block; }
 a{ color:var(--blue-400); text-decoration:none; }
 a:hover{ opacity:.9; }
@@ -788,16 +790,18 @@ border-radius: var(--radius-m); padding: var(--sp-5); box-shadow: var(--shadow-s
 
 @media (max-width:560px){
   body{ overflow-x:hidden; }
+  html{ scroll-padding-top:88px; }
+  section[id], [id]{ scroll-margin-top:88px; }
   .upper-header-content{ margin:0; padding:var(--sp-1) var(--sp-2); flex-wrap:wrap; gap:4px; font-size:12px; }
   .contact-grid{ gap:var(--sp-2); }
   .contact-card,.map-card{ padding:var(--sp-3); }
   header{ padding:var(--sp-2) var(--sp-2); }
   .logo img{ width:120px; }
   #aboutme{ padding:40px 0; }
-  .aboutme-page{ width:calc(100% - 32px); margin:0 16px; padding:14px; }
-  .aboutme-content,.aboutme-page img{ flex-basis:100%; min-width:0; }
-  .aboutme-page img{ max-height:220px; object-fit:cover; }
-  .aboutme-content{ font-size:14px; line-height:1.55; }
+  .aboutme-page{ display:flex; flex-direction:column; width:calc(100% - 32px); margin:0 16px; padding:14px; gap:16px; }
+  .aboutme-page picture{ width:100%; max-width:100%; flex:0 0 auto; }
+  .aboutme-content{ flex-basis:100%; min-width:0; font-size:14px; line-height:1.55; }
+  .aboutme-page img{ display:block; width:100%; max-width:100%; height:auto; max-height:none; min-width:0; object-fit:cover; }
   .aboutme-content h3.aboutme-start{ font-size:18px; margin-bottom:8px; }
   .home, .home-list-start, .offer-wrap, #pricelist, .booking-wrap, .meeting, .contact-wrap, .site-footer, .testimonials, .certificates-wrap, .techniques-wrap, .help-wrap, .service-areas{ padding-left:16px !important; padding-right:16px !important; }
   .section-title{ padding:0 16px; margin:var(--sp-5) 0 var(--sp-3); }

@@ -1,12 +1,22 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<script async type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/62b9bbbc82d34.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
-<!-- Google tag (gtag.js) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   window.addEventListener('load', function() {
+    const cmpScript = document.createElement('script');
+    cmpScript.async = true;
+    cmpScript.type = 'text/javascript';
+    cmpScript.setAttribute('data-cmp-ab', '1');
+    cmpScript.src = 'https://cdn.consentmanager.net/delivery/autoblocking/62b9bbbc82d34.js';
+    cmpScript.setAttribute('data-cmp-host', 'b.delivery.consentmanager.net');
+    cmpScript.setAttribute('data-cmp-cdn', 'cdn.consentmanager.net');
+    cmpScript.setAttribute('data-cmp-codesrc', '16');
+    setTimeout(function() {
+      document.head.appendChild(cmpScript);
+    }, 1800);
+
     const gtagScript = document.createElement('script');
     gtagScript.async = true;
     gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9Z06G21FE2';
@@ -28,10 +38,18 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://cdn.consentmanager.net" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.consentmanager.net">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="canonical" href="https://mtherapy.pl/">
 <link rel="alternate" hreflang="pl" href="https://mtherapy.pl/">
 <link rel="alternate" hreflang="x-default" href="https://mtherapy.pl/">
 <link rel="preload" href="style.min.css?v=20260822" as="style">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/playfair-display-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="images/optimized/gabinet.jpg" imagesrcset="images/optimized/mobile/gabinet.jpg 640w, images/optimized/medium/gabinet.jpg 960w, images/optimized/gabinet.jpg 1600w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
 <link rel="stylesheet" href="style.min.css?v=20260822" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="style.min.css?v=20260822"></noscript>

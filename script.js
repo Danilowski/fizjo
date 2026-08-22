@@ -1,11 +1,20 @@
 
 
-// ── Zaktualizuj tę liczbę po każdej synchronizacji z ZnanyLekarz
+// ----- Configuration -----
+// Zaktualizuj tę liczbę po każdej synchronizacji z ZnanyLekarz.
 const ZNANY_LEKARZ_REVIEW_COUNT = 161;
 const GOOGLE_REVIEW_COUNT = 82; // osobny parametr, nie powiązany z liczbą opinii ZnanyLekarz
 const HEADER_HEIGHT = 80;      // sticky header offset
 const REVEAL_THRESHOLD = 0.12; // IntersectionObserver visibility threshold
 const CAROUSEL_SPEED = 500;    // ms, carousel animation speed
+
+// ----- Helpers -----
+const getInitialVisibleReviews = () => {
+  const isMobile = window.matchMedia('(max-width: 560px)').matches;
+  return isMobile ? 3 : 4;
+};
+
+// ----- Testimonials data -----
 
 const TESTIMONIALS = [
   { name: 'Barbara', icon: '👩‍⚕️', date: '2026-06-15', text: 'Jestem po pierwszej wizycie u Pani Moniki. Przemiła osoba z profesjonalnym podejściem do pacjenta. Czekam na efekty naszej dalszej współpracy. Polecam z całego serca.' },
@@ -26,11 +35,16 @@ const TESTIMONIALS = [
   { name: 'Magda', icon: '🙋🏻', text: 'Bardzo profesjonalne i przyjazne podejście do pacjenta. Pani Monika zwraca również uwagę na próg bólu pacjenta, co uważam za ogromny plus. Z pewnością jeszcze wrócę, dziękuję bardzo!' }
 ];
 
-const renderTestimonials = () => {
+// ----- Rendering -----
+const renderTestimonials = (startIndex = 0) => {
   const slider = document.querySelector('.testimonial__slider');
-  if (!slider) return;
+  if (!slider) return 0;
 
-  const reviews = TESTIMONIALS.map((review, index) => `
+  const totalVisible = Math.min(getInitialVisibleReviews(), TESTIMONIALS.length);
+  const safeStart = Math.max(0, Math.min(startIndex, Math.max(0, TESTIMONIALS.length - totalVisible)));
+  const visibleReviews = TESTIMONIALS.slice(safeStart, safeStart + totalVisible);
+
+  const reviews = visibleReviews.map((review, index) => `
     <div class="testimonial__item" itemscope itemtype="https://schema.org/Review" ${index === 0 ? 'data-first="true"' : ''}>
       <div class="testimonial__author">
         <div class="testimonial__author__icon" aria-hidden="true">${review.icon}</div>
@@ -65,10 +79,13 @@ const renderTestimonials = () => {
     <meta itemprop="ratingCount" content="${ZNANY_LEKARZ_REVIEW_COUNT}">
     ${reviews}
   `;
+
+  return safeStart;
 };
 
+// ----- DOM ready bootstrap -----
 document.addEventListener('DOMContentLoaded', () => {
-renderTestimonials();
+let testimonialStartIndex = renderTestimonials(0);
 document.querySelectorAll('.js-review-count').forEach(el => { el.textContent = ZNANY_LEKARZ_REVIEW_COUNT; });
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.getElementById('primary-navigation');
@@ -157,7 +174,7 @@ window.gtag?.('event', 'generate_lead', {
 });
 });
 
-// Smooth scroll z kompensacją sticky header
+// ----- Smooth scrolling -----
 document.querySelectorAll('a[href^="#"]').forEach(a => {
 a.addEventListener('click', e => {
   // Nie scrolluj gdy link Oferta jest togglem submenu na mobilach
@@ -172,7 +189,7 @@ window.scrollTo({ top: y, behavior: 'smooth' });
 });
 });
 
-// Reveal on scroll
+// ----- Reveal on scroll -----
 const revealTargets = document.querySelectorAll('.offer-card, .booking-card, .booking-side, .contact-card, .map-card, .aboutme-page, .testimonial__item');
 const io = new IntersectionObserver((entries) => {
 entries.forEach(e => {
@@ -185,22 +202,26 @@ io.unobserve(e.target);
 revealTargets.forEach(el => io.observe(el));
 
 const testimonialSlider = document.querySelector('.testimonial__slider');
-const testimonialItems = Array.from(document.querySelectorAll('.testimonial__item'));
 
-if (testimonialSlider && testimonialItems.length) {
-  let currentIndex = 0;
+if (testimonialSlider) {
+  const getVisibleTestimonials = () => Array.from(testimonialSlider.querySelectorAll('.testimonial__item'));
 
   const goToItem = (index) => {
-    const safeIndex = Math.max(0, Math.min(index, testimonialItems.length - 1));
-    currentIndex = safeIndex;
-    const targetItem = testimonialItems[safeIndex];
-    testimonialSlider.scrollTo({ left: targetItem.offsetLeft, behavior: 'smooth' });
+    const visibleItems = getVisibleTestimonials();
+    const safeIndex = Math.max(0, Math.min(index, visibleItems.length - 1));
+    const targetItem = visibleItems[safeIndex];
+    if (targetItem) {
+      testimonialSlider.scrollTo({ left: targetItem.offsetLeft, behavior: 'smooth' });
+    }
   };
 
   document.querySelectorAll('.testimonials .testimonial-nav-btn:not(.certificate-nav-btn)').forEach(btn => {
     btn.addEventListener('click', () => {
       const direction = btn.dataset.direction === 'next' ? 1 : -1;
-      goToItem(currentIndex + direction);
+      const nextStart = Math.max(0, Math.min(testimonialStartIndex + direction, Math.max(0, TESTIMONIALS.length - INITIAL_VISIBLE_REVIEWS)));
+      testimonialStartIndex = nextStart;
+      testimonialStartIndex = renderTestimonials(testimonialStartIndex);
+      goToItem(0);
     });
   });
 }
