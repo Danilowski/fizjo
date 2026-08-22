@@ -798,10 +798,13 @@ border-radius: var(--radius-m); padding: var(--sp-5); box-shadow: var(--shadow-s
   header{ padding:var(--sp-2) var(--sp-2); }
   .logo img{ width:120px; }
   #aboutme{ padding:40px 0; }
-  .aboutme-page{ display:flex; flex-direction:column; width:calc(100% - 32px); margin:0 16px; padding:14px; gap:16px; align-items:stretch; }
-  .aboutme-page picture{ width:100%; max-width:100%; flex-basis:100%; }
-  .aboutme-content{ flex:0 0 100%; flex-basis:100%; min-width:0; font-size:14px; line-height:1.55; }
-  .aboutme-page img{ display:block; width:100%; max-width:100%; flex:0 0 100%; flex-basis:100%; height:auto; min-width:0; max-height:none; object-fit:cover; }
+  .aboutme-page{ display:block; width:calc(100% - 32px); margin:0 16px; padding:14px; }
+  .aboutme-page picture,
+  .aboutme-page img,
+  .aboutme-content{ display:block; width:100%; max-width:100%; min-width:0; margin:0; }
+  .aboutme-page picture{ margin-bottom:16px; }
+  .aboutme-content{ font-size:14px; line-height:1.55; }
+  .aboutme-page img{ height:auto; max-height:none; object-fit:cover; }
   .aboutme-content h3.aboutme-start{ font-size:18px; margin-bottom:8px; }
   .home, .home-list-start, .offer-wrap, #pricelist, .booking-wrap, .meeting, .contact-wrap, .site-footer, .testimonials, .certificates-wrap, .techniques-wrap, .help-wrap, .service-areas{ padding-left:16px !important; padding-right:16px !important; }
   .section-title{ padding:0 16px; margin:var(--sp-5) 0 var(--sp-3); }
