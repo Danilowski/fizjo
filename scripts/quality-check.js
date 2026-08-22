@@ -13,13 +13,14 @@ const checks = [
   ['Main CTA present', /Umów wizytę online/, html],
   ['Reviews section present', /Opinie pacjentów/, html],
   ['JS has review config', /ZNANY_LEKARZ_REVIEW_COUNT/, js],
-  ['JS has initial review limit', /getInitialVisibleReviews|INITIAL_VISIBLE_REVIEWS/, js],
+  ['JS has no initial review limit', /getInitialVisibleReviews|INITIAL_VISIBLE_REVIEWS/, js, false],
   ['JS has DOM ready bootstrap', /DOMContentLoaded/, js]
 ];
 
 let failed = false;
-for (const [label, regex, source] of checks) {
-  if (!regex.test(source)) {
+for (const [label, regex, source, shouldMatch = true] of checks) {
+  const matches = regex.test(source);
+  if (matches !== shouldMatch) {
     console.error(`Quality check failed: ${label}`);
     failed = true;
   }
