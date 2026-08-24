@@ -67,8 +67,28 @@ const renderTestimonials = () => {
   `;
 };
 
+// JSON-LD injected at runtime so ratingCount always matches ZNANY_LEKARZ_REVIEW_COUNT above (single source of truth)
+const injectAggregateRatingSchema = () => {
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": "https://mtherapy.pl/",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": ZNANY_LEKARZ_REVIEW_COUNT
+    }
+  });
+  document.head.appendChild(script);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 renderTestimonials();
+injectAggregateRatingSchema();
 document.querySelectorAll('.js-review-count').forEach(el => { el.textContent = ZNANY_LEKARZ_REVIEW_COUNT; });
 document.querySelectorAll('.js-google-review-count').forEach(el => { el.textContent = GOOGLE_REVIEW_COUNT; });
 const menuToggle = document.querySelector('.menu-toggle');
