@@ -73,7 +73,7 @@ const injectAggregateRatingSchema = () => {
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
+    "@type": "MedicalClinic",
     "@id": "https://mtherapy.pl/",
     "aggregateRating": {
       "@type": "AggregateRating",
