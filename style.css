@@ -309,6 +309,7 @@ border-radius:999px; font-weight:700; font-size:var(--fs-small);
 .pricing-description{ color:var(--text-900); font-size:var(--fs-body); margin:0; line-height:1.6; }
 .pricing-meta{ display:flex; gap:var(--sp-2); font-size:var(--fs-small); color:var(--navy-900); }
 .pricing-card--addon{ opacity:1; border-style:dashed; }
+.pricing-cta{ width:100%; margin-top:auto; }
 .pricelist-note{
 text-align:center; padding:var(--sp-4); background:var(--blue-100);
 border:1px solid var(--border-blue); border-radius:var(--radius-m);

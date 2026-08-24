@@ -1,9 +1,9 @@
 
 
-// ── Zaktualizuj tę liczbę po każdej synchronizacji z ZnanyLekarz
-const ZNANY_LEKARZ_REVIEW_COUNT = 161;
-const GOOGLE_REVIEW_COUNT = 82; // osobny parametr, nie powiązany z liczbą opinii ZnanyLekarz
-const HEADER_HEIGHT = 80;      // sticky header offset
+// ── Liczniki opinii: aktualizuj oba po każdej synchronizacji z ZnanyLekarz i Google Maps
+const ZNANY_LEKARZ_REVIEW_COUNT = 161; // napędza karuzelę opinii (schema.org/Review) i .js-review-count
+const GOOGLE_REVIEW_COUNT = 82; // wyświetlany jako liczba w .js-google-review-count
+const HEADER_HEIGHT = 80;      // sticky header offset fallback (uzywany tylko gdy #header nie istnieje)
 const REVEAL_THRESHOLD = 0.12; // IntersectionObserver visibility threshold
 const CAROUSEL_SPEED = 500;    // ms, carousel animation speed
 
@@ -70,6 +70,7 @@ const renderTestimonials = () => {
 document.addEventListener('DOMContentLoaded', () => {
 renderTestimonials();
 document.querySelectorAll('.js-review-count').forEach(el => { el.textContent = ZNANY_LEKARZ_REVIEW_COUNT; });
+document.querySelectorAll('.js-google-review-count').forEach(el => { el.textContent = GOOGLE_REVIEW_COUNT; });
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.getElementById('primary-navigation');
 const mobileNavMedia = window.matchMedia('(max-width: 992px)');
@@ -166,7 +167,9 @@ a.addEventListener('click', e => {
   const el = document.getElementById(id);
 if (el) {
 e.preventDefault();
-const y = el.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
+// Mierzone na bieżąco, bo wysokość nagłówka zmienia się wraz z breakpointami CSS
+const headerOffset = document.querySelector('header')?.getBoundingClientRect().height || HEADER_HEIGHT;
+const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 window.scrollTo({ top: y, behavior: 'smooth' });
 }
 });
