@@ -1,6 +1,7 @@
 
 
-// ── Liczniki opinii: aktualizuj oba po każdej synchronizacji z ZnanyLekarz i Google Maps
+// ── Liczniki opinii: aktualizuj oba po każdej synchronizacji z ZnanyLekarz i Google Maps.
+// ratingCount w statycznym JSON-LD aggregateRating (index.html) trzeba aktualizować ręcznie, tak samo.
 const ZNANY_LEKARZ_REVIEW_COUNT = 161; // napędza karuzelę opinii (schema.org/Review) i .js-review-count
 const GOOGLE_REVIEW_COUNT = 82; // wyświetlany jako liczba w .js-google-review-count
 const HEADER_HEIGHT = 80;      // sticky header offset fallback (uzywany tylko gdy #header nie istnieje)
@@ -54,41 +55,11 @@ const renderTestimonials = () => {
     </div>
   `).join('');
 
-  slider.innerHTML = `
-    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
-      <meta itemprop="name" content="M.Therapy">
-      <meta itemprop="url" content="https://mtherapy.pl/">
-    </div>
-    <meta itemprop="ratingValue" content="5">
-    <meta itemprop="bestRating" content="5">
-    <meta itemprop="worstRating" content="1">
-    <meta itemprop="ratingCount" content="${ZNANY_LEKARZ_REVIEW_COUNT}">
-    ${reviews}
-  `;
-};
-
-// JSON-LD injected at runtime so ratingCount always matches ZNANY_LEKARZ_REVIEW_COUNT above (single source of truth)
-const injectAggregateRatingSchema = () => {
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.textContent = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "@id": "https://mtherapy.pl/",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": ZNANY_LEKARZ_REVIEW_COUNT
-    }
-  });
-  document.head.appendChild(script);
+  slider.innerHTML = reviews;
 };
 
 document.addEventListener('DOMContentLoaded', () => {
 renderTestimonials();
-injectAggregateRatingSchema();
 document.querySelectorAll('.js-review-count').forEach(el => { el.textContent = ZNANY_LEKARZ_REVIEW_COUNT; });
 document.querySelectorAll('.js-google-review-count').forEach(el => { el.textContent = GOOGLE_REVIEW_COUNT; });
 const menuToggle = document.querySelector('.menu-toggle');
