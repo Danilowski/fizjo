@@ -18,7 +18,7 @@
   <link rel="preload" href="../style.min.css?v=20260824" as="style">
   <link rel="stylesheet" href="../style.min.css?v=20260824" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../style.min.css?v=20260824"></noscript>
-  <link rel="preload" as="image" href="../images/optimized/monika.jpg" imagesrcset="../images/optimized/mobile/monika.jpg 640w, ../images/optimized/monika.jpg 960w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="../images/optimized/monika.avif" imagesrcset="../images/optimized/mobile/monika.avif 640w, ../images/optimized/monika.avif 960w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="article">
@@ -68,7 +68,10 @@
 
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art"><img src="../images/optimized/monika.jpg" srcset="../images/optimized/mobile/monika.jpg 640w, ../images/optimized/monika.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Pierwsza wizyta u fizjoterapeuty M.Therapy" decoding="async" fetchpriority="high" width="960" height="1200"></div>
+      <div class="hero-art"><picture>
+      <source type="image/avif" srcset="../images/optimized/mobile/monika.avif 640w, ../images/optimized/monika.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+      <source type="image/webp" srcset="../images/optimized/mobile/monika.webp 640w, ../images/optimized/monika.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+      <img src="../images/optimized/monika.jpg" srcset="../images/optimized/mobile/monika.jpg 640w, ../images/optimized/monika.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Pierwsza wizyta u fizjoterapeuty M.Therapy" decoding="async" fetchpriority="high" width="960" height="1200"></picture></div>
       <div class="hero-copy page-hero">
         <p class="eyebrow">Pierwsza wizyta</p>
         <h1 id="hero-title">Przygotuj się do pierwszej wizyty w M.Therapy</h1>

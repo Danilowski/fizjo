@@ -18,7 +18,7 @@
   <link rel="preload" href="../style.min.css?v=20260824" as="style">
   <link rel="stylesheet" href="../style.min.css?v=20260824" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../style.min.css?v=20260824"></noscript>
-  <link rel="preload" as="image" href="../images/optimized/gabinet.jpg" imagesrcset="../images/optimized/mobile/gabinet.jpg 640w, ../images/optimized/medium/gabinet.jpg 960w, ../images/optimized/gabinet.jpg 1600w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="../images/optimized/gabinet.avif" imagesrcset="../images/optimized/mobile/gabinet.avif 640w, ../images/optimized/medium/gabinet.avif 960w, ../images/optimized/gabinet.avif 1600w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="article">
@@ -68,7 +68,10 @@
 
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art"><img src="../images/optimized/gabinet.jpg" srcset="../images/optimized/mobile/gabinet.jpg 640w, ../images/optimized/medium/gabinet.jpg 960w, ../images/optimized/gabinet.jpg 1600w" sizes="(max-width: 700px) 100vw, 960px" alt="Kontakt i dojazd do gabinetu M.Therapy" decoding="async" fetchpriority="high" width="1600" height="1280"></div>
+      <div class="hero-art"><picture>
+      <source type="image/avif" srcset="../images/optimized/mobile/gabinet.avif 640w, ../images/optimized/medium/gabinet.avif 960w, ../images/optimized/gabinet.avif 1600w" sizes="(max-width: 700px) 100vw, 960px">
+      <source type="image/webp" srcset="../images/optimized/mobile/gabinet.webp 640w, ../images/optimized/medium/gabinet.webp 960w, ../images/optimized/gabinet.webp 1600w" sizes="(max-width: 700px) 100vw, 960px">
+      <img src="../images/optimized/gabinet.jpg" srcset="../images/optimized/mobile/gabinet.jpg 640w, ../images/optimized/medium/gabinet.jpg 960w, ../images/optimized/gabinet.jpg 1600w" sizes="(max-width: 700px) 100vw, 960px" alt="Kontakt i dojazd do gabinetu M.Therapy" decoding="async" fetchpriority="high" width="1600" height="1280"></picture></div>
       <div class="hero-copy page-hero">
         <p class="eyebrow">Kontakt i dojazd</p>
         <h1 id="hero-title">Gabinet M.Therapy w Bydgoszczy</h1>
@@ -110,7 +113,6 @@
         <article class="help-card"><h3>Wygodne metody płatności</h3><p>Możesz zapłacić gotówką, kartą płatniczą lub przez BLIK.</p></article>
         <article class="help-card"><h3>Pewny kontakt</h3><p>Jeśli masz pytania, wybierz dogodny sposób kontaktu: telefon, e-mail oraz wiadomości przez messengera i Instagrama. </p></article>
       </div>
-    </section>
     </section>
     <section class="help-wrap">
       <div class="section-title"><span>Opinie i zaufanie</span><h2>Doświadczenie w praktyce</h2></div>

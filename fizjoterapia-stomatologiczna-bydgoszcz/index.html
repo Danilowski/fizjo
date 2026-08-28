@@ -18,7 +18,7 @@
   <link rel="preload" href="../style.min.css?v=20260824" as="style">
   <link rel="stylesheet" href="../style.min.css?v=20260824" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../style.min.css?v=20260824"></noscript>
-  <link rel="preload" as="image" href="../images/optimized/oferta-stomatologia.jpg" imagesrcset="../images/optimized/mobile/oferta-stomatologia.jpg 640w, ../images/optimized/oferta-stomatologia.jpg 960w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" href="../images/optimized/oferta-stomatologia.avif" imagesrcset="../images/optimized/mobile/oferta-stomatologia.avif 640w, ../images/optimized/oferta-stomatologia.avif 960w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="article">
@@ -68,7 +68,10 @@
 
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-art"><img src="../images/optimized/oferta-stomatologia.jpg" srcset="../images/optimized/mobile/oferta-stomatologia.jpg 640w, ../images/optimized/oferta-stomatologia.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Gabinet M.Therapy - fizjoterapia stomatologiczna" decoding="async" fetchpriority="high" width="960" height="1200"></div>
+      <div class="hero-art"><picture>
+      <source type="image/avif" srcset="../images/optimized/mobile/oferta-stomatologia.avif 640w, ../images/optimized/oferta-stomatologia.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+      <source type="image/webp" srcset="../images/optimized/mobile/oferta-stomatologia.webp 640w, ../images/optimized/oferta-stomatologia.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+      <img src="../images/optimized/oferta-stomatologia.jpg" srcset="../images/optimized/mobile/oferta-stomatologia.jpg 640w, ../images/optimized/oferta-stomatologia.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Gabinet M.Therapy - fizjoterapia stomatologiczna" decoding="async" fetchpriority="high" width="960" height="1200"></picture></div>
       <div class="hero-copy page-hero">
         <p class="eyebrow">Fizjoterapia stomatologiczna</p>
         <h1 id="hero-title">Wsparcie dla stawu skroniowo-żuchwowego</h1>

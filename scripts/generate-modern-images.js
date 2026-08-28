@@ -4,22 +4,13 @@ const sharp = require('sharp');
 
 const ROOT = path.resolve(__dirname, '..');
 const IMAGES_DIR = path.join(ROOT, 'images', 'optimized');
-const ALLOWED_MEDIUM_CERTS = new Set(['certyfikat-3.jpg', 'certyfikat-4.jpg', 'certyfikat-5.jpg', 'certyfikat-8.jpg', 'certyfikat-9.jpg', 'certyfikat-14.jpg']);
+// Zrodlowe orginaly bez avif/webp - nieuzywane w HTML, pomijane zeby nie marnowac czasu builda.
+const EXCLUDED_JUNK = new Set(['IMG_0515.jpg', 'IMG_0520.jpg', 'IMG_0523.jpg', 'IMG_0524.jpg', 'abc.jpg', 'roler.jpg']);
 
 const isTargetJpeg = (filePath) => {
   if (!filePath.toLowerCase().endsWith('.jpg')) return false;
-  const rel = path.relative(IMAGES_DIR, filePath).replace(/\\/g, '/').toLowerCase();
-  const name = path.basename(rel);
-
-  if (rel.startsWith('mobile/')) {
-    return name.startsWith('certyfikat-') || name === 'monika.jpg';
-  }
-
-  if (rel.startsWith('medium/')) {
-    return ALLOWED_MEDIUM_CERTS.has(name);
-  }
-
-  return name.startsWith('certyfikat-') || name === 'monika.jpg';
+  const name = path.basename(filePath);
+  return !EXCLUDED_JUNK.has(name);
 };
 
 const walk = (dir) => {

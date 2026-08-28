@@ -47,7 +47,7 @@
 <link rel="preload" href="fonts/inter-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/playfair-display-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="images/optimized/gabinet.jpg" imagesrcset="images/optimized/mobile/gabinet.jpg 640w, images/optimized/medium/gabinet.jpg 960w, images/optimized/gabinet.jpg 1600w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" href="images/optimized/gabinet.avif" imagesrcset="images/optimized/mobile/gabinet.avif 640w, images/optimized/medium/gabinet.avif 960w, images/optimized/gabinet.avif 1600w" imagesizes="(max-width: 700px) 100vw, 960px" fetchpriority="high">
 <link rel="stylesheet" href="style.min.css?v=20260824" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="style.min.css?v=20260824"></noscript>
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -129,7 +129,11 @@
 <section id="home" class="home" aria-labelledby="home-title">
 <div class="hero">
 <div class="hero-art">
+<picture>
+<source type="image/avif" srcset="images/optimized/mobile/gabinet.avif 640w, images/optimized/medium/gabinet.avif 960w, images/optimized/gabinet.avif 1600w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/gabinet.webp 640w, images/optimized/medium/gabinet.webp 960w, images/optimized/gabinet.webp 1600w" sizes="(max-width: 700px) 100vw, 960px">
 <img src="images/optimized/gabinet.jpg" srcset="images/optimized/mobile/gabinet.jpg 640w, images/optimized/medium/gabinet.jpg 960w, images/optimized/gabinet.jpg 1600w" sizes="(max-width: 700px) 100vw, 960px" alt="Gabinet M.Therapy – nowoczesne wnętrze fizjoterapii w Bydgoszczy" fetchpriority="high" width="1600" height="1280">
+</picture>
 </div>
 <div class="hero-copy">
 <h1 id="home-title">Fizjoterapia stomatologiczna i ortopedyczna w Bydgoszczy</h1>
@@ -315,7 +319,10 @@
 
 <div class="offers-grid">
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-ortopedia.jpg" srcset="images/optimized/mobile/oferta-ortopedia.jpg 640w, images/optimized/oferta-ortopedia.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Fizjoterapia ortopedyczna w Bydgoszczy" loading="lazy" decoding="async" width="960" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-ortopedia.avif 640w, images/optimized/oferta-ortopedia.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-ortopedia.webp 640w, images/optimized/oferta-ortopedia.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-ortopedia.jpg" srcset="images/optimized/mobile/oferta-ortopedia.jpg 640w, images/optimized/oferta-ortopedia.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Fizjoterapia ortopedyczna w Bydgoszczy" loading="lazy" decoding="async" width="960" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Fizjoterapia Ortopedyczna w Bydgoszczy</h3>
 <p>Profesjonalna fizjoterapia ortopedyczna w Bydgoszczy - leczenie bólu i dysfunkcji układu mięśniowo-szkieletowego, urazów, zwyrodnień i dyskopatii. Przywracam sprawność i prawidłową biomechanikę.</p>
@@ -325,7 +332,10 @@
 </article>
 
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-stomatologia.jpg" srcset="images/optimized/mobile/oferta-stomatologia.jpg 640w, images/optimized/oferta-stomatologia.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Fizjoterapia stomatologiczna w Bydgoszczy i Wyżynach" loading="lazy" decoding="async" width="960" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-stomatologia.avif 640w, images/optimized/oferta-stomatologia.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-stomatologia.webp 640w, images/optimized/oferta-stomatologia.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-stomatologia.jpg" srcset="images/optimized/mobile/oferta-stomatologia.jpg 640w, images/optimized/oferta-stomatologia.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Fizjoterapia stomatologiczna w Bydgoszczy i Wyżynach" loading="lazy" decoding="async" width="960" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Fizjoterapia Stomatologiczna – Bydgoszcz</h3>
 <p>Specjalistyczna fizjoterapia stomatologiczna w Bydgoszczy - kompleksowe leczenie dysfunkcji stawów skroniowo-żuchwowych (TMJ), bólu głowy, bruksizmu (zgrzytanie/zaciskanie zębami), szumów/pisków usznych. Rehabilitacja po zabiegach dentystycznych, ekstrakcjach zębów i w trakcie procesu ortodontycznego.</p>
@@ -335,7 +345,10 @@
 </article>
 
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-pourazowa.jpg" srcset="images/optimized/mobile/oferta-pourazowa.jpg 640w, images/optimized/oferta-pourazowa.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Rehabilitacja pourazowa po urazie" loading="lazy" decoding="async" width="960" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-pourazowa.avif 640w, images/optimized/oferta-pourazowa.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-pourazowa.webp 640w, images/optimized/oferta-pourazowa.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-pourazowa.jpg" srcset="images/optimized/mobile/oferta-pourazowa.jpg 640w, images/optimized/oferta-pourazowa.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Rehabilitacja pourazowa po urazie" loading="lazy" decoding="async" width="960" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Rehabilitacja Pourazowa</h3>
 <p>Profesjonalna rehabilitacja pourazowa w Bydgoszczy dla pacjentów po złamaniach, skręceniach stawów, stłuczeniach tkanek, naderwaniach więzadeł oraz innych kontuzjach. Holistyczne podejście zapewnia bezpieczny i szybki powrót do normalnego funkcjonowania.</p>
@@ -345,7 +358,10 @@
 </article>
 
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-przed-po.jpg" srcset="images/optimized/mobile/oferta-przed-po.jpg 640w, images/optimized/oferta-przed-po.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Rehabilitacja przed i pooperacyjna" loading="lazy" decoding="async" width="960" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-przed-po.avif 640w, images/optimized/oferta-przed-po.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-przed-po.webp 640w, images/optimized/oferta-przed-po.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-przed-po.jpg" srcset="images/optimized/mobile/oferta-przed-po.jpg 640w, images/optimized/oferta-przed-po.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Rehabilitacja przed i pooperacyjna" loading="lazy" decoding="async" width="960" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Rehabilitacja Przed I Pooperacyjna</h3>
 <p>Kompleksowe wsparcie przed i po operacji stawów np. kręgosłupa, barku, biodra lub kolana. Fizjoterapia przedoperacyjna przygotowuje mięśnie i układ krążenia, co przyspiesza powrót do zdrowia. Rehabilitacja pooperacyjna wspomaga gojenie się tkanek i przywrócenie pełnej funkcjonalności.</p>
@@ -355,7 +371,10 @@
 </article>
 
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-trening.jpg" srcset="images/optimized/mobile/oferta-trening.jpg 640w, images/optimized/oferta-trening.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Medyczny trening rehabilitacyjny" loading="lazy" decoding="async" width="960" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-trening.avif 640w, images/optimized/oferta-trening.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-trening.webp 640w, images/optimized/oferta-trening.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-trening.jpg" srcset="images/optimized/mobile/oferta-trening.jpg 640w, images/optimized/oferta-trening.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Medyczny trening rehabilitacyjny" loading="lazy" decoding="async" width="960" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Medyczny Trening Rehabilitacyjny</h3>
 <p>Medyczny trening rehabilitacyjny to zaplanowany program ćwiczeń specyficznych dla dysfunkcji ruchowych. Trening obejmuje zaawansowane ćwiczenia wzmacniające, naukę prawidłowej ergonomii i stabilizacji stawów oraz korektę błędnych wzorców ruchowych.</p>
@@ -365,7 +384,10 @@
 </article>
 
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-blizny.jpg" srcset="images/optimized/mobile/oferta-blizny.jpg 640w, images/optimized/oferta-blizny.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Terapia blizn i gojenia tkanek" loading="lazy" decoding="async" width="960" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-blizny.avif 640w, images/optimized/oferta-blizny.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-blizny.webp 640w, images/optimized/oferta-blizny.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-blizny.jpg" srcset="images/optimized/mobile/oferta-blizny.jpg 640w, images/optimized/oferta-blizny.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Terapia blizn i gojenia tkanek" loading="lazy" decoding="async" width="960" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Terapia Blizn</h3>
 <p>Specjalistyczna terapia blizn wspomaga proces gojenia i remodelingowania tkanek. Poprzez techniki manualne, igłoterapię czy kinesiotaping poprawia się czucie w obrębie blizny, jej elastyczność i ruchomość. Terapia blizn zmniejsza dyskomfort i ograniczenia funkcjonalne.</p>
@@ -375,7 +397,10 @@
 </article>
 
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-masaz.jpg" srcset="images/optimized/mobile/oferta-masaz.jpg 640w, images/optimized/oferta-masaz.jpg 900w" sizes="(max-width: 700px) 100vw, 960px" alt="Masaż leczniczy i relaksacyjny" loading="lazy" decoding="async" width="900" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-masaz.avif 640w, images/optimized/oferta-masaz.avif 900w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-masaz.webp 640w, images/optimized/oferta-masaz.webp 900w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-masaz.jpg" srcset="images/optimized/mobile/oferta-masaz.jpg 640w, images/optimized/oferta-masaz.jpg 900w" sizes="(max-width: 700px) 100vw, 960px" alt="Masaż leczniczy i relaksacyjny" loading="lazy" decoding="async" width="900" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Masaż Leczniczy I Relaksacyjny</h3>
 <p>Masaż leczniczy w M.Therapy w Bydgoszczy to techniki manualne redukujące napięcie mięśniowe, poprawiające krążenie krwi i limfy, zwiększające elastyczność tkanek, a także zmniejszające ból. Masaż może obejmować sam grzbiet lub grzbiet i kończyny dolne.</p>
@@ -385,7 +410,10 @@
 </article>
 
 <article class="offer-card">
-<div class="offer-img"><img src="images/optimized/oferta-bruksizm.jpg" srcset="images/optimized/mobile/oferta-bruksizm.jpg 640w, images/optimized/oferta-bruksizm.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Terapia bruksizmu i dolegliwości stawów skroniowo-żuchwowych" loading="lazy" decoding="async" width="960" height="1200"></div>
+<div class="offer-img"><picture>
+<source type="image/avif" srcset="images/optimized/mobile/oferta-bruksizm.avif 640w, images/optimized/oferta-bruksizm.avif 960w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/oferta-bruksizm.webp 640w, images/optimized/oferta-bruksizm.webp 960w" sizes="(max-width: 700px) 100vw, 960px">
+<img src="images/optimized/oferta-bruksizm.jpg" srcset="images/optimized/mobile/oferta-bruksizm.jpg 640w, images/optimized/oferta-bruksizm.jpg 960w" sizes="(max-width: 700px) 100vw, 960px" alt="Terapia bruksizmu i dolegliwości stawów skroniowo-żuchwowych" loading="lazy" decoding="async" width="960" height="1200"></picture></div>
 <div class="offer-body">
 <h3>Terapia Bruksizmu</h3>
 <p>Terapia bruksizmu (zgrzytania/zaciskania zębami) to kompleksowe podejście łączące techniki manualne w obrębie twarzoczaszki, edukację pacjenta oraz wsparcie behawioralne. Bruksizm prowadzi do bólu głowy, ścierania lub pękania zębów, napięć w okolicy szyi, karku i głowy - fizjoterapia skutecznie redukuje te objawy.</p>
@@ -534,7 +562,11 @@
 
 <div class="booking-side">
 <div class="booking-hero">
+<picture>
+<source type="image/avif" srcset="images/optimized/mobile/booking.avif 640w, images/optimized/medium/booking.avif 960w, images/optimized/booking.avif 1600w" sizes="(max-width: 700px) 100vw, 960px">
+<source type="image/webp" srcset="images/optimized/mobile/booking.webp 640w, images/optimized/medium/booking.webp 960w, images/optimized/booking.webp 1600w" sizes="(max-width: 700px) 100vw, 960px">
 <img src="images/optimized/booking.jpg" srcset="images/optimized/mobile/booking.jpg 640w, images/optimized/medium/booking.jpg 960w, images/optimized/booking.jpg 1600w" sizes="(max-width: 700px) 100vw, 960px" alt="Nowoczesne wnętrze gabinetu M.Therapy" loading="lazy" decoding="async" width="1600" height="1411">
+</picture>
 </div>
 <ul class="booking-benefits">
 <li>Pierwsza wizyta: ok. 45–55 min</li>
