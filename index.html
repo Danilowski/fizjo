@@ -6,7 +6,7 @@
   window.cmp_setlang = "PL";
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  window.addEventListener('load', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const cmpScript = document.createElement('script');
     cmpScript.async = true;
     cmpScript.type = 'text/javascript';
@@ -15,10 +15,9 @@
     cmpScript.setAttribute('data-cmp-host', 'b.delivery.consentmanager.net');
     cmpScript.setAttribute('data-cmp-cdn', 'cdn.consentmanager.net');
     cmpScript.setAttribute('data-cmp-codesrc', '16');
-    setTimeout(function() {
-      document.head.appendChild(cmpScript);
-    }, 250);
-
+    document.head.appendChild(cmpScript);
+  }, { once: true });
+  window.addEventListener('load', function() {
     const gtagScript = document.createElement('script');
     gtagScript.async = true;
     gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-9Z06G21FE2';
