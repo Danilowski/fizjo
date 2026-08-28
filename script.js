@@ -2,7 +2,7 @@
 
 // ── Liczniki opinii: aktualizuj oba po każdej synchronizacji z ZnanyLekarz i Google Maps.
 // ratingCount w statycznym JSON-LD aggregateRating (index.html) trzeba aktualizować ręcznie, tak samo.
-const ZNANY_LEKARZ_REVIEW_COUNT = 161; // napędza karuzelę opinii (schema.org/Review) i .js-review-count
+const ZNANY_LEKARZ_REVIEW_COUNT = 162; // napędza karuzelę opinii (schema.org/Review) i .js-review-count
 const GOOGLE_REVIEW_COUNT = 82; // wyświetlany jako liczba w .js-google-review-count
 const HEADER_HEIGHT = 80;      // sticky header offset fallback (uzywany tylko gdy #header nie istnieje)
 const REVEAL_THRESHOLD = 0.12; // IntersectionObserver visibility threshold

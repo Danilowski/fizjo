@@ -3,7 +3,7 @@
   "short_name": "M.Therapy Bydgoszcz",
   "description": "Profesjonalna fizjoterapia ortopedyczna i stomatologiczna w Bydgoszczy, dzielnica Wyżyny. Rehabilitacja, masaż, terapia blizn i trening medyczny.",
   "start_url": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#f7f9fc",
   "theme_color": "#1f2a44",
   "icons": [
