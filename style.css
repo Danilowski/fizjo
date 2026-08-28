@@ -92,7 +92,7 @@ section[id], [id]{ scroll-margin-top:96px; }
 img{ max-width:100%; height:auto; display:block; }
 a{ color:var(--blue-400); text-decoration:none; }
 a:hover{ opacity:.9; }
-p a, li a{ text-decoration:underline; text-underline-offset:3px; }
+p a{ text-decoration:underline; text-underline-offset:3px; }
 .skip-link{ position:absolute; left:-9999px; top:auto; }
 .skip-link:focus{ left:16px; top:16px; z-index:1000; background:#fff; color:var(--navy-900); padding:10px 14px; border-radius:999px; box-shadow:var(--shadow-s); }
 
